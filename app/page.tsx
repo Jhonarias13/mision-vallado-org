@@ -264,7 +264,7 @@ export default function Component() {
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [heroImages.length])
 
   const t = translations[language]
 
@@ -766,7 +766,7 @@ export default function Component() {
                       ))}
                     </div>
                     <blockquote className="text-lg text-gray-700 italic mb-6 leading-relaxed">
-                      "{t.testimonial1}"
+                      &ldquo;{t.testimonial1}&rdquo;
                     </blockquote>
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-red-400 to-pink-400 rounded-full flex items-center justify-center">
@@ -788,7 +788,7 @@ export default function Component() {
                       ))}
                     </div>
                     <blockquote className="text-lg text-gray-700 italic mb-6 leading-relaxed">
-                      "{t.testimonial2}"
+                      &ldquo;{t.testimonial2}&rdquo;
                     </blockquote>
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-red-400 to-pink-400 rounded-full flex items-center justify-center">
