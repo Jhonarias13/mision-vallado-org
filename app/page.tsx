@@ -325,29 +325,30 @@ export default function Component() {
   const [customAmount, setCustomAmount] = useState<string>("")
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isProcessing, setIsProcessing] = useState(false)
+  const [isHoveringProgram, setIsHoveringProgram] = useState(false)
 
-  const heroImages = [
-    {
-      src: "/niños_protegidos.jpg",
-      alt: "Niños protegidos por Misión Vallado"
-    },
-    {
-      src: "/programa.jpg",
-      alt: "Programas de Misión Vallado"
-    },
-    {
-      src: "/niño.jpg",
-      alt: "Niño sonriendo - Misión Vallado"
-    }
+  const programImages = [
+    "/imagen5.jpeg", // Formación Vallado - Imagen de programa general
+    "/imagen6.jpeg", // Escuadrón Vallado - Muestra el impacto en los niños
+    "/imagen7.jpeg", // Vallado Party - Imagen de niño feliz
+    "/imagen8.jpeg" // Diversión Vallado - Imagen de actividades
   ]
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length)
-    }, 3000)
+    let interval: NodeJS.Timeout;
+    
+    if (!isHoveringProgram) {
+      interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % programImages.length)
+      }, 3000)
+    }
 
-    return () => clearInterval(interval)
-  }, [heroImages.length])
+    return () => {
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [programImages.length, isHoveringProgram])
 
   const t = translations[language]
 
@@ -639,7 +640,7 @@ export default function Component() {
                 <div className="relative">
                     <div className="relative z-10 overflow-hidden rounded-2xl">
                       <div className="relative w-full sm:min-w-full md:min-w-[500px] lg:min-w-[600px] h-[280px] sm:h-[300px] md:h-[500px] lg:h-[600px]">
-                        {heroImages.map((image, index) => (
+                        {programImages.map((src, index) => (
                           <div
                             key={index}
                             className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -647,11 +648,12 @@ export default function Component() {
                             }`}
                           >
                             <Image
-                              src={image.src}
+                              src={src}
                               fill
-                              alt={image.alt}
+                              alt={`Programa ${index + 1} - Misión Vallado`}
                               className="rounded-2xl shadow-2xl object-cover w-full h-full"
                               sizes="(max-width: 320px) 280px, (max-width: 640px) 300px, (max-width: 768px) 500px, 600px"
+                              priority={index === 0}
                             />
                           </div>
                         ))}
@@ -744,57 +746,84 @@ export default function Component() {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div 
+                  className="space-y-8"
+                  onMouseEnter={() => setIsHoveringProgram(true)}
+                  onMouseLeave={() => setIsHoveringProgram(false)}
+                >
+                  <div 
+                    className="group flex items-start space-x-4 p-4 rounded-xl transition-all duration-300 hover:bg-red-50 hover:shadow-lg cursor-pointer"
+                    onMouseEnter={() => setCurrentImageIndex(0)}
+                  >
+                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.formacionVallado}</h3>
-                      <p className="text-gray-600">{t.formacionValladoDesc}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">{t.formacionVallado}</h3>
+                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{t.formacionValladoDesc}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div 
+                    className="group flex items-start space-x-4 p-4 rounded-xl transition-all duration-300 hover:bg-red-50 hover:shadow-lg cursor-pointer"
+                    onMouseEnter={() => setCurrentImageIndex(1)}
+                  >
+                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.escuadronVallado}</h3>
-                      <p className="text-gray-600">{t.escuadronValladoDesc}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">{t.escuadronVallado}</h3>
+                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{t.escuadronValladoDesc}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div 
+                    className="group flex items-start space-x-4 p-4 rounded-xl transition-all duration-300 hover:bg-red-50 hover:shadow-lg cursor-pointer"
+                    onMouseEnter={() => setCurrentImageIndex(2)}
+                  >
+                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.valladoParty}</h3>
-                      <p className="text-gray-600">{t.valladoPartyDesc}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">{t.valladoParty}</h3>
+                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{t.valladoPartyDesc}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div 
+                    className="group flex items-start space-x-4 p-4 rounded-xl transition-all duration-300 hover:bg-red-50 hover:shadow-lg cursor-pointer"
+                    onMouseEnter={() => setCurrentImageIndex(3)}
+                  >
+                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.diversionVallado}</h3>
-                      <p className="text-gray-600">{t.diversionValladoDesc}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">{t.diversionVallado}</h3>
+                      <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{t.diversionValladoDesc}</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="relative">
-                  <Image
-                    src="/programa.jpg"
-                    width="600"
-                    height="500"
-                    alt="Programas de Misión Vallado"
-                    className="rounded-2xl shadow-xl"
-                  />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" /> */}
+                  <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-xl">
+                    {programImages.map((src, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-500 ${
+                          index === currentImageIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <Image
+                          src={src}
+                          alt={`Programa ${index + 1} - Misión Vallado`}
+                          fill
+                          className="object-cover"
+                          priority={index === 0}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -977,7 +1006,7 @@ export default function Component() {
           </section>
 
           {/* Donation CTA Section */}
-          <section className="py-20 bg-gradient-to-r from-red-500 via-red-600 to-pink-600 relative overflow-hidden">
+          <section className="py-20 bg-red-500 relative overflow-hidden">
             <div className="absolute inset-0 bg-black/10" />
             <div className="container px-4 mx-auto relative z-10">
               <div className="max-w-4xl mx-auto text-center">
