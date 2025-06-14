@@ -25,6 +25,10 @@ import {
   Languages,
   Menu,
   X,
+  Youtube,
+  Instagram,
+  Facebook,
+  MessageCircle,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -38,15 +42,17 @@ const translations = {
     impact: "Impacto",
     contact: "Contacto",
     donate: "Donar",
+    videos: "Videos",
+    book: "El Regalo del Rey",
 
     // Hero
     childProtection: "Protección Infantil",
     heroTitle: "Protegemos a los niños y niñas del abuso sexual",
     heroDescription:
-      "Movimiento para proteger a los niños, niñas y adolescentes del abuso sexual y otras amenazas que vulneran su integridad, dignidad y desarrollo integral.",
+      "Somos una Entidad sin Ánimo de Lucro, basada en principios cristianos, que promueve una cultura de cuidado y protección a la niñez, para resguardarlos del abuso sexual. Trabajamos enseñando a los padres cómo minimizar los riesgos y empoderando a los menores para que puedan identificar estas amenazas y denunciarlas a tiempo.",
     makeDonation: "Hacer una Donación",
     learnMore: "Conocer Nuestro Trabajo",
-    childrenProtected: "+500 niños protegidos",
+    childrenProtected: "+2.109 niños protegidos",
     rating: "Calificación 5.0",
 
     // Stats
@@ -59,7 +65,9 @@ const translations = {
     ourMission: "Nuestra Misión",
     missionTitle: "Construyendo un mundo más seguro para la infancia",
     missionDescription:
-      "Trabajamos incansablemente en la prevención del abuso sexual infantil, brindando protección integral y apoyo especializado a víctimas, mientras educamos a comunidades enteras sobre la importancia de crear entornos seguros para todos los niños y niñas.",
+      "Protegemos a niños y niñas del abuso sexual, educando y movilizando a padres, cuidadores, comunidades y actores sociales, promoviendo la prevención, detección temprana y atención integral para su desarrollo seguro.",
+    visionTitle: "Nuestra Visión",
+    visionDescription: "Un mundo donde los niños y niñas tengan una infancia feliz, sin traumas, ni secuelas que les impidan desarrollar todo su potencial y alcanzar sus sueños.",
     prevention: "Prevención",
     preventionDesc:
       "Implementamos programas educativos innovadores para prevenir el abuso sexual y crear entornos protectores en hogares, escuelas y comunidades.",
@@ -73,15 +81,14 @@ const translations = {
     // Programs
     ourPrograms: "Nuestros Programas",
     programsTitle: "Programas especializados de protección infantil",
-    schoolProgram: "Programa de Prevención Escolar",
-    schoolProgramDesc:
-      "Talleres educativos en instituciones educativas para enseñar a niños y adolescentes sobre autocuidado y prevención del abuso sexual.",
-    psychosocialSupport: "Apoyo Psicosocial",
-    psychosocialSupportDesc:
-      "Atención psicológica especializada y acompañamiento integral para víctimas de abuso sexual y sus familias.",
-    adultTraining: "Formación de Adultos Protectores",
-    adultTrainingDesc:
-      "Capacitación especializada para padres, educadores y cuidadores en identificación de señales de alerta y protocolos de actuación.",
+    formacionVallado: "Formación Vallado",
+    formacionValladoDesc: "Talleres, charlas, seminarios, conferencias encaminadas a la sensibilización y formación de padres, comunidades, y diferentes actores sociales sobre temas de protección a la niñez.",
+    escuadronVallado: "Escuadrón Vallado",
+    escuadronValladoDesc: "Grupo de entidades públicas y privadas, que colaboran o han hecho una alianza estratégica con nuestra fundación para apoyar y promover nuestra misión dentro y fuera de su organización.",
+    valladoParty: "Vallado Party",
+    valladoPartyDesc: "Fiestas de cumpleaños para niños, donde además de juegos, sorpresas y diversión, los niños reciben un taller sobre prevención de abuso sexual y un mensaje del amor de Dios.",
+    diversionVallado: "Diversión Vallado",
+    diversionValladoDesc: "Materiales creativos para niños niñas: cuentos, juegos de mesa, historietas, comics, juegos en línea con los temas de nuestra fundación.",
 
     // Impact
     impactTitle: "Transformando vidas, construyendo futuros seguros",
@@ -89,6 +96,43 @@ const translations = {
     protectedFromAbuse: "Niños y niñas protegidos del abuso sexual",
     trainedAdults: "Adultos capacitados como protectores",
     recoveryRate: "Tasa de recuperación exitosa",
+
+    // Why We Do It
+    whyWeDoIt: "¿Por qué lo hacemos?",
+    whyWeDoItTitle: "La realidad del abuso sexual infantil",
+    whyWeDoItDescription: "Cuando una niña o un niño es víctima de abuso sexual, experimenta dolor, sufrimiento y desconcierto, pues la mayoría de las veces no alcanza a comprender lo que está sucediendo. El agresor en la mayoría de los casos (85%), es alguien cercano o incluso parte de su familia, esto contribuye a que guarde silencio por miedo a que no le crean, lo culpen o se cumplan las amenazas del abusador.",
+    whyWeDoItStats: [
+      "A nivel mundial una de cada cuatro niñas y uno de cada cinco niños es víctima de abuso sexual.",
+      "Solo uno de cada diez niños abusados cuenta lo sucedido y muchas veces lo hace años después de ocurrido el abuso",
+      "Un menor que ha sido víctima de abuso sexual puede experimentar a lo largo de su vida trastornos alimenticios y del sueño, así como también baja autoestima, ansiedad, depresión, consumo de sustancias psicoactivas, conductas sexuales de riesgo, autolesiones e incluso intentos de suicidio."
+    ],
+
+    // Videos
+    videosTitle: "Nuestros Videos",
+    videosDescription: "Conoce más sobre nuestro trabajo a través de estos videos",
+
+    // Book
+    bookTitle: "El Regalo del Rey",
+    bookDescription: "El regalo del Rey es una historia educativa que acompaña a los niños en su proceso de reconocimiento y protección frente a situaciones de abuso. A través de su protagonista, la ovejita Campanita, los pequeños aprenderán la importancia de escuchar su voz interior, acudir a adultos de confianza y decir ¡NO! cuando alguien intenta hacerles daño.",
+    bookFeatures: [
+      "Lenguaje cercano y lleno de valores como la valentía y la confianza",
+      "Promueve la conciencia sobre la prevención del abuso infantil",
+      "Incluye un instructivo para padres",
+      "Escrito por nuestra fundadora y presidenta, Glenys Otero"
+    ],
+    donateBook: "Donar un libro",
+
+    // Support
+    supportTitle: "¿Cómo puedes apoyarnos?",
+    supportDescription: "Con tu ayuda podemos hacer la diferencia en la vida de los niños y las niñas, ellos aprenderán a no callar lo que les daña y sus padres y la comunidad estarán más atentos a protegerlos.",
+    supportWays: [
+      "Visitando nuestras redes sociales y compartiendo nuestras publicaciones",
+      "Haciendo una donación para nuestros proyectos y estrategias",
+      "Si haces parte de una empresa u organización puedes unirte al Escuadrón Vallado",
+      "Donando un libro EL REGALO DEL REY para un niño de bajos recursos",
+      "Contratando nuestros servicios: Charlas, Talleres y Conferencias",
+      "Ofreciéndote como voluntario"
+    ],
 
     // Donation CTA
     donationTitle: "Tu donación salva vidas infantiles",
@@ -138,15 +182,17 @@ const translations = {
     impact: "Impact",
     contact: "Contact",
     donate: "Donate",
+    videos: "Videos",
+    book: "The King's Gift",
 
     // Hero
     childProtection: "Child Protection",
     heroTitle: "We protect children from sexual abuse",
     heroDescription:
-      "Movement to protect children and adolescents from sexual abuse and other threats that violate their integrity, dignity and comprehensive development.",
+      "We are a Non-Profit Organization, based on Christian principles, that promotes a culture of care and protection for children, to safeguard them from sexual abuse. We work by teaching parents how to minimize risks and empowering minors to identify these threats and report them in time.",
     makeDonation: "Make a Donation",
     learnMore: "Learn About Our Work",
-    childrenProtected: "+500 children protected",
+    childrenProtected: "+2,109 children protected",
     rating: "5.0 Rating",
 
     // Stats
@@ -159,7 +205,9 @@ const translations = {
     ourMission: "Our Mission",
     missionTitle: "Building a safer world for childhood",
     missionDescription:
-      "We work tirelessly in the prevention of child sexual abuse, providing comprehensive protection and specialized support to victims, while educating entire communities about the importance of creating safe environments for all children.",
+      "We protect children from sexual abuse by educating and mobilizing parents, caregivers, communities, and social actors, promoting prevention, early detection, and comprehensive care for their safe development.",
+    visionTitle: "Our Vision",
+    visionDescription: "A world where children have a happy childhood, without traumas or sequelae that prevent them from developing their full potential and reaching their dreams.",
     prevention: "Prevention",
     preventionDesc:
       "We implement innovative educational programs to prevent sexual abuse and create protective environments in homes, schools and communities.",
@@ -173,15 +221,14 @@ const translations = {
     // Programs
     ourPrograms: "Our Programs",
     programsTitle: "Specialized child protection programs",
-    schoolProgram: "School Prevention Program",
-    schoolProgramDesc:
-      "Educational workshops in educational institutions to teach children and adolescents about self-care and prevention of sexual abuse.",
-    psychosocialSupport: "Psychosocial Support",
-    psychosocialSupportDesc:
-      "Specialized psychological care and comprehensive support for victims of sexual abuse and their families.",
-    adultTraining: "Protective Adults Training",
-    adultTrainingDesc:
-      "Specialized training for parents, educators and caregivers in identifying warning signs and action protocols.",
+    formacionVallado: "Vallado Training",
+    formacionValladoDesc: "Workshops, talks, seminars, conferences aimed at raising awareness and training parents, communities, and different social actors on child protection issues.",
+    escuadronVallado: "Vallado Squadron",
+    escuadronValladoDesc: "Group of public and private entities that collaborate or have made a strategic alliance with our foundation to support and promote our mission within and outside their organization.",
+    valladoParty: "Vallado Party",
+    valladoPartyDesc: "Birthday parties for children, where in addition to games, surprises and fun, children receive a workshop on sexual abuse prevention and a message of God's love.",
+    diversionVallado: "Vallado Fun",
+    diversionValladoDesc: "Creative materials for children: stories, board games, comics, online games with our foundation's themes.",
 
     // Impact
     impactTitle: "Transforming lives, building safe futures",
@@ -189,6 +236,43 @@ const translations = {
     protectedFromAbuse: "Children protected from sexual abuse",
     trainedAdults: "Adults trained as protectors",
     recoveryRate: "Successful recovery rate",
+
+    // Why We Do It
+    whyWeDoIt: "Why We Do It",
+    whyWeDoItTitle: "The reality of child sexual abuse",
+    whyWeDoItDescription: "When a child is a victim of sexual abuse, they experience pain, suffering, and confusion, as most of the time they cannot understand what is happening. The perpetrator in most cases (85%) is someone close to or even part of their family, which contributes to their silence due to fear of not being believed, being blamed, or the abuser's threats being carried out.",
+    whyWeDoItStats: [
+      "Worldwide, one in four girls and one in five boys is a victim of sexual abuse.",
+      "Only one in ten abused children tells what happened, and often years after the abuse occurred",
+      "A minor who has been a victim of sexual abuse may experience eating and sleep disorders throughout their life, as well as low self-esteem, anxiety, depression, psychoactive substance use, risky sexual behaviors, self-harm, and even suicide attempts."
+    ],
+
+    // Videos
+    videosTitle: "Our Videos",
+    videosDescription: "Learn more about our work through these videos",
+
+    // Book
+    bookTitle: "The King's Gift",
+    bookDescription: "The King's Gift is an educational story that accompanies children in their process of recognition and protection against abuse situations. Through its protagonist, the little sheep Campanita, children will learn the importance of listening to their inner voice, turning to trusted adults, and saying NO! when someone tries to harm them.",
+    bookFeatures: [
+      "Close language full of values such as courage and trust",
+      "Promotes awareness about child abuse prevention",
+      "Includes a guide for parents",
+      "Written by our founder and president, Glenys Otero"
+    ],
+    donateBook: "Donate a book",
+
+    // Support
+    supportTitle: "How can you support us?",
+    supportDescription: "With your help, we can make a difference in the lives of children. They will learn not to remain silent about what harms them, and their parents and community will be more attentive to protecting them.",
+    supportWays: [
+      "Visiting our social networks and sharing our posts",
+      "Making a donation for our projects and strategies",
+      "If you are part of a company or organization, you can join the Vallado Squadron",
+      "Donating a book THE KING'S GIFT for a child in need",
+      "Hiring our services: Talks, Workshops and Conferences",
+      "Offering yourself as a volunteer"
+    ],
 
     // Donation CTA
     donationTitle: "Your donation saves children's lives",
@@ -314,6 +398,24 @@ export default function Component() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const youtubeVideos = [
+    {
+      id: "BDiiEmp6_70",
+      title: "Prevención de Abuso Sexual Infantil",
+      description: "Video educativo sobre prevención de abuso sexual infantil"
+    },
+    {
+      id: "TrgW7OtxJBs",
+      title: "Vallado Party",
+      description: "Conoce más sobre nuestras fiestas de cumpleaños con propósito"
+    },
+    {
+      id: "TyVqCY1nE_0",
+      title: "Testimonio de Superación",
+      description: "Historia de esperanza y transformación"
+    }
+  ]
+
   return (
     <>
       <div className="flex flex-col min-h-screen bg-white">
@@ -369,6 +471,18 @@ export default function Component() {
               </Link>
               <Link href="#contacto" className="transition-colors hover:text-red-500">
                 {t.contact}
+              </Link>
+              <Link 
+                href="#book" 
+                className="relative group transition-all hover:text-red-500 px-3 py-1.5 rounded-full bg-gradient-to-r from-red-50 to-pink-50 border border-red-200 hover:border-red-300 hover:shadow-lg hover:shadow-red-100"
+              >
+                <span className="relative z-10 flex items-center">
+                  <BookOpen className="w-4 h-4 mr-1.5 text-red-500" />
+                  {t.book}
+                </span>
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-red-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-red-500/0 to-pink-500/0 group-hover:from-red-500/5 group-hover:to-pink-500/5 rounded-full transition-all duration-300"></span>
               </Link>
 
               {/* Language Selector */}
@@ -431,6 +545,19 @@ export default function Component() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t.contact}
+              </Link>
+              <Link
+                href="#book"
+                className="block text-sm font-medium transition-colors hover:text-red-500 relative group px-3 py-2 rounded-lg bg-gradient-to-r from-red-50 to-pink-50 border border-red-200 hover:border-red-300 hover:shadow-lg hover:shadow-red-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="relative z-10 flex items-center">
+                  <BookOpen className="w-4 h-4 mr-1.5 text-red-500" />
+                  {t.book}
+                </span>
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-red-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-red-500/0 to-pink-500/0 group-hover:from-red-500/5 group-hover:to-pink-500/5 rounded-lg transition-all duration-300"></span>
               </Link>
 
               <div className="flex items-center space-x-4 pt-2">
@@ -624,8 +751,8 @@ export default function Component() {
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.schoolProgram}</h3>
-                      <p className="text-gray-600">{t.schoolProgramDesc}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.formacionVallado}</h3>
+                      <p className="text-gray-600">{t.formacionValladoDesc}</p>
                     </div>
                   </div>
 
@@ -634,8 +761,8 @@ export default function Component() {
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.psychosocialSupport}</h3>
-                      <p className="text-gray-600">{t.psychosocialSupportDesc}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.escuadronVallado}</h3>
+                      <p className="text-gray-600">{t.escuadronValladoDesc}</p>
                     </div>
                   </div>
 
@@ -644,8 +771,18 @@ export default function Component() {
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.adultTraining}</h3>
-                      <p className="text-gray-600">{t.adultTrainingDesc}</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.valladoParty}</h3>
+                      <p className="text-gray-600">{t.valladoPartyDesc}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <CheckCircle className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{t.diversionVallado}</h3>
+                      <p className="text-gray-600">{t.diversionValladoDesc}</p>
                     </div>
                   </div>
                 </div>
@@ -710,6 +847,136 @@ export default function Component() {
             </div>
           </section>
 
+          {/* Why We Do It Section */}
+          <section id="why-we-do-it" className="py-20 bg-white">
+            <div className="container px-4 mx-auto">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <Badge variant="outline" className="mb-4 border-red-200 text-red-600">
+                  {t.whyWeDoIt}
+                </Badge>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">{t.whyWeDoItTitle}</h2>
+                <p className="text-xl text-gray-600 leading-relaxed">{t.whyWeDoItDescription}</p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {t.whyWeDoItStats.map((stat, index) => (
+                  <Card key={index} className="border-0 shadow-lg">
+                    <CardContent className="p-8">
+                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <Shield className="h-6 w-6 text-red-500" />
+                      </div>
+                      <p className="text-gray-600 leading-relaxed">{stat}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Videos Section */}
+          <section id="videos" className="py-20 bg-gray-50">
+            <div className="container px-4 mx-auto">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <Badge variant="outline" className="mb-4 border-red-200 text-red-600">
+                  <Youtube className="w-3 h-3 mr-1" />
+                  {t.videos}
+                </Badge>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">{t.videosTitle}</h2>
+                <p className="text-xl text-gray-600">{t.videosDescription}</p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {youtubeVideos.map((video) => (
+                  <div key={video.id} className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Book Section */}
+          <section id="book" className="py-20 bg-white">
+            <div className="container px-4 mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <div className="space-y-4">
+                    <Badge variant="outline" className="mb-4 border-red-200 text-red-600">
+                      <BookOpen className="w-3 h-3 mr-1" />
+                      {t.book}
+                    </Badge>
+                    <h2 className="text-4xl font-bold text-gray-900">{t.bookTitle}</h2>
+                    <p className="text-xl text-gray-600 leading-relaxed">{t.bookDescription}</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold text-gray-900">Características:</h3>
+                    <ul className="space-y-2">
+                      {t.bookFeatures.map((feature, index) => (
+                        <li key={index} className="flex items-start space-x-2">
+                          <CheckCircle className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
+                          <span className="text-gray-600">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Button
+                    size="lg"
+                    className="bg-red-500 hover:bg-red-600 text-white"
+                    onClick={handleDonationClick}
+                  >
+                    <Heart className="mr-2 h-5 w-5" />
+                    {t.donateBook}
+                  </Button>
+                </div>
+
+                <div className="relative">
+                  <Image
+                    src="/libro.jpg"
+                    width="600"
+                    height="800"
+                    alt="El Regalo del Rey - Misión Vallado"
+                    className="rounded-2xl shadow-xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Support Section */}
+          <section className="py-20 bg-gradient-to-br from-red-50 to-pink-50">
+            <div className="container px-4 mx-auto">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <Badge variant="outline" className="mb-4 border-red-200 text-red-600">
+                  <Users className="w-3 h-3 mr-1" />
+                  {t.supportTitle}
+                </Badge>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">{t.supportTitle}</h2>
+                <p className="text-xl text-gray-600">{t.supportDescription}</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {t.supportWays.map((way, index) => (
+                  <Card key={index} className="border-0 shadow-lg">
+                    <CardContent className="p-8">
+                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <CheckCircle className="h-6 w-6 text-red-500" />
+                      </div>
+                      <p className="text-gray-600 leading-relaxed">{way}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Donation CTA Section */}
           <section className="py-20 bg-gradient-to-r from-red-500 via-red-600 to-pink-600 relative overflow-hidden">
             <div className="absolute inset-0 bg-black/10" />
@@ -737,10 +1004,6 @@ export default function Component() {
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4" />
                     <span>{t.taxDeductible}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>{t.totalTransparency}</span>
                   </div>
                 </div>
               </div>
@@ -827,22 +1090,36 @@ export default function Component() {
                 <p className="text-gray-300 mb-6 max-w-md leading-relaxed">{t.footerDescription}</p>
                 <div className="flex space-x-4">
                   <Link
-                    href="#"
+                    href="https://www.youtube.com/@misionvallado6894"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
                   >
-                    <Globe className="w-5 h-5" />
+                    <Youtube className="w-5 h-5" />
                   </Link>
                   <Link
-                    href="#"
+                    href="https://www.instagram.com/misionvallado"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
                   >
-                    <Users className="w-5 h-5" />
+                    <Instagram className="w-5 h-5" />
                   </Link>
                   <Link
-                    href="#"
+                    href="https://www.facebook.com/profile.php?id=100068028247976"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
                   >
-                    <Mail className="w-5 h-5" />
+                    <Facebook className="w-5 h-5" />
+                  </Link>
+                  <Link
+                    href="https://wa.me/573124281616?text=Hola%20Misión%20Vallado%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20programas%20de%20protección%20infantil."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                  >
+                    <MessageCircle className="w-5 h-5" />
                   </Link>
                 </div>
               </div>
@@ -852,15 +1129,15 @@ export default function Component() {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Phone className="h-4 w-4 text-red-400" />
-                    <span className="text-gray-300">+57 (1) 234-5678</span>
+                    <span className="text-gray-300">+57 312 428 1616</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="h-4 w-4 text-red-400" />
-                    <span className="text-gray-300">info@misionvallado.org</span>
+                    <span className="text-gray-300">glenys.otero@misionvallado.org</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-4 w-4 text-red-400" />
-                    <span className="text-gray-300">Bogotá, Colombia</span>
+                    <span className="text-gray-300">Santander, Colombia</span>
                   </div>
                 </div>
               </div>
@@ -868,17 +1145,17 @@ export default function Component() {
               <div>
                 <h3 className="font-semibold text-lg mb-4">{t.links}</h3>
                 <div className="space-y-2">
-                  <Link href="#" className="block text-gray-300 hover:text-white transition-colors">
+                  <Link href="#programas" className="block text-gray-300 hover:text-white transition-colors">
                     {t.programs}
                   </Link>
-                  <Link href="#" className="block text-gray-300 hover:text-white transition-colors">
-                    {t.volunteering}
+                  <Link href="#videos" className="block text-gray-300 hover:text-white transition-colors">
+                    {t.videos}
                   </Link>
-                  <Link href="#" className="block text-gray-300 hover:text-white transition-colors">
-                    {t.transparency}
+                  <Link href="#book" className="block text-gray-300 hover:text-white transition-colors">
+                    {t.book}
                   </Link>
-                  <Link href="#" className="block text-gray-300 hover:text-white transition-colors">
-                    {t.resources}
+                  <Link href="#contacto" className="block text-gray-300 hover:text-white transition-colors">
+                    {t.contact}
                   </Link>
                 </div>
               </div>
