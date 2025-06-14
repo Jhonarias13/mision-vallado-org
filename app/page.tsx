@@ -20,7 +20,6 @@ import {
   ArrowRight,
   Heart,
   Award,
-  Globe,
   TrendingUp,
   Languages,
   Menu,
