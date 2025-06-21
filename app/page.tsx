@@ -372,17 +372,19 @@ export default function Component() {
     "/imagen11.jpeg", // Hero secundario - Actividades educativas
     "/imagen9.jpeg", // Hero terciario - Comunidad unida
     "/imagen8.jpeg", // Hero cuaternario - Protección infantil
-    "/imagen7.jpeg", // Hero quinto - Protección infantil
+    // "/imagen7.jpeg", // Hero quinto - Protección infantil
   ];
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
+    // Solo crear el intervalo si no estamos hover sobre programas
     if (!isHoveringProgram) {
       interval = setInterval(() => {
-        setCurrentImageIndex(
-          (prevIndex) => (prevIndex + 1) % heroImages.length
-        );
+        setCurrentImageIndex((prevIndex) => {
+          const nextIndex = (prevIndex + 1) % heroImages.length;
+          return nextIndex;
+        });
       }, 3000);
     }
 
@@ -820,13 +822,25 @@ export default function Component() {
                 <div className="relative">
                   <div className="relative z-10 overflow-hidden rounded-2xl">
                     <div className="relative w-full sm:min-w-full md:min-w-[500px] lg:min-w-[600px] h-[280px] sm:h-[300px] md:h-[500px] lg:h-[600px]">
+                      {/* Imagen de respaldo siempre visible */}
+                      <div className="absolute inset-0 z-0">
+                        <Image
+                          src={heroImages[0]}
+                          fill
+                          alt="Hero - Misión Vallado"
+                          className="rounded-2xl shadow-2xl object-cover w-full h-full"
+                          sizes="(max-width: 320px) 280px, (max-width: 640px) 300px, (max-width: 768px) 500px, 600px"
+                          priority
+                        />
+                      </div>
+                      
                       {heroImages.map((src, index) => (
                         <div
                           key={index}
-                          className={`absolute inset-0 transition-opacity duration-1000 ${
+                          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
                             index === currentImageIndex
-                              ? "opacity-100"
-                              : "opacity-0"
+                              ? "opacity-100 z-10"
+                              : "opacity-0 z-0"
                           }`}
                         >
                           <Image
@@ -1341,7 +1355,7 @@ export default function Component() {
                   <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-xl">
                     {programImages.map((src, index) => (
                       <div
-                        key={index + 1}
+                        key={index}
                         className={`absolute inset-0 transition-opacity duration-500 ${
                           index === currentImageIndex
                             ? "opacity-100"
