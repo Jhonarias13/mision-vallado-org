@@ -1317,9 +1317,9 @@ export default function Component() {
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">
                   {t.whyWeDoItTitle}
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                {/* <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
                   {t.whyWeDoItDescription}
-                </p>
+                </p> */}
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
