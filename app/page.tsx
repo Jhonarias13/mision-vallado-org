@@ -1024,11 +1024,11 @@ export default function Component() {
                 {/* Mission */}
                 <div className="space-y-6">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                      <Shield className="h-8 w-8 text-white" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                      <Shield className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
                         MISIÓN
                       </h3>
                       <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
@@ -1055,11 +1055,11 @@ export default function Component() {
                 {/* Vision */}
                 <div className="space-y-6">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                      <TrendingUp className="h-8 w-8 text-white" />
+                    <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                      <TrendingUp className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
                         VISIÓN
                       </h3>
                       <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
@@ -1085,11 +1085,11 @@ export default function Component() {
               {/* Values Section */}
               <div className="space-y-8">
                 <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                    <Award className="h-8 w-8 text-white" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                    <Award className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       NUESTROS VALORES
                     </h3>
                     <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
