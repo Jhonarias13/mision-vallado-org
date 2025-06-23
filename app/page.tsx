@@ -31,6 +31,7 @@ import {
   Instagram,
   Facebook,
   MessageCircle,
+  Video,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -135,6 +136,7 @@ const translations = {
 
     // Support
     supportTitle: "¿Cómo puedes apoyarnos?",
+    supportTitle2: "Yo me uno a Misión Vallado",
     supportDescription:
       "Con tu ayuda podemos hacer la diferencia en la vida de los niños y las niñas, ellos aprenderán a no callar lo que les daña y sus padres y la comunidad estarán más atentos a protegerlos.",
     supportWays: [
@@ -159,9 +161,9 @@ const translations = {
     testimonials: "Testimonios",
     testimonialsTitle: "Historias de esperanza y transformación",
     testimonial1:
-      "Gracias a Misión Vallado recibí el apoyo psicológico especializado que necesitaba para superar el trauma del abuso. Hoy puedo decir que tengo una vida plena y esperanzadora.",
-    testimonial1Author: "Ana M.",
-    testimonial1Role: "Beneficiaria del programa de protección",
+      "Muchas gracias a Misión Vallado por visitarnos en nuestra escuela rural y enseñarnos a proteger a nuestros niños, gracias por enseñarles a ellos a no quedarse callados ante el abuso.",
+    testimonial1Author: "Elizabeth Q.",
+    testimonial1Role: "Docente beneficiaria del programa de protección",
     testimonial2:
       "Como padre, los talleres de Misión Vallado me enseñaron a proteger mejor a mis hijos. Su trabajo profesional y dedicado es realmente invaluable para nuestra sociedad.",
     testimonial2Author: "Juan P.",
@@ -285,6 +287,7 @@ const translations = {
 
     // Support
     supportTitle: "How can you support us?",
+    supportTitle2: "I join Misión Vallado",
     supportDescription:
       "With your help, we can make a difference in the lives of children. They will learn not to remain silent about what harms them, and their parents and community will be more attentive to protecting them.",
     supportWays: [
@@ -344,6 +347,7 @@ export default function Component() {
   const [language, setLanguage] = useState<"es" | "en">("es");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImagenIndex2, setCurrentImagenIndex2] = useState(0);
   const [isHoveringProgram, setIsHoveringProgram] = useState(false);
   const [animatedNumbers, setAnimatedNumbers] = useState({
     protectedChildren: 0,
@@ -356,14 +360,18 @@ export default function Component() {
     "/imagen14.jpeg", // Escuadrón Vallado - Muestra el impacto en los niños
     "/imagen7.jpeg", // Vallado Party - Imagen de niño feliz
     "/imagen5.jpeg", // Diversión Vallado - Imagen de actividades
+    "/imagen10.jpeg", // Diversión Vallado - Imagen de actividades
+    "/imagen11.jpeg", // Diversión Vallado - Imagen de actividades
+    "/imagen12.jpeg", // Diversión Vallado - Imagen de actividades
+    "/imagen13.jpeg", // Diversión Vallado - Imagen de actividades
+    "/imagen14.jpeg", // Diversión Vallado - Imagen de actividades
+    "/imagen15.jpeg", // Diversión Vallado - Imagen de actividades
   ];
 
   const heroImages = [
-    "/imagen13.jpeg", // Hero principal - Niños felices
-    "/imagen11.jpeg", // Hero secundario - Actividades educativas
-    "/imagen9.jpeg", // Hero terciario - Comunidad unida
-    "/imagen8.jpeg", // Hero cuaternario - Protección infantil
-    // "/imagen7.jpeg", // Hero quinto - Protección infantil
+    "/imagen6.jpeg", // Hero principal - Niños felices
+    "/imagen7.jpeg", // Hero principal - Niños felices
+    "/imagen8.jpeg", // Hero principal - Niños felices
   ];
 
   useEffect(() => {
@@ -384,7 +392,24 @@ export default function Component() {
         clearInterval(interval);
       }
     };
-  }, [heroImages.length, isHoveringProgram]);
+  }, [heroImages.length]);
+
+  useEffect(() => {
+    let interval2: NodeJS.Timeout;
+    if (!isHoveringProgram) {
+      interval2 = setInterval(() => {
+        setCurrentImagenIndex2((prevIndex) => {
+          const nextIndex = (prevIndex + 1) % programImages.length;
+          return nextIndex;
+        });
+      }, 3000);
+    }
+    return () => {
+      if (interval2) {
+        clearInterval(interval2);
+      }
+    };
+  }, [programImages.length, isHoveringProgram]);
 
   // Animate numbers when impact section is visible
   useEffect(() => {
@@ -402,7 +427,10 @@ export default function Component() {
                 current = target;
                 clearInterval(timer);
               }
-              setAnimatedNumbers(prev => ({ ...prev, protectedChildren: Math.floor(current) }));
+              setAnimatedNumbers((prev) => ({
+                ...prev,
+                protectedChildren: Math.floor(current),
+              }));
             }, 30);
 
             // Animate trained adults (5,134)
@@ -415,7 +443,10 @@ export default function Component() {
                 currentAdults = targetAdults;
                 clearInterval(timerAdults);
               }
-              setAnimatedNumbers(prev => ({ ...prev, trainedAdults: Math.floor(currentAdults) }));
+              setAnimatedNumbers((prev) => ({
+                ...prev,
+                trainedAdults: Math.floor(currentAdults),
+              }));
             }, 30);
 
             // Animate recovery rate (95)
@@ -428,7 +459,10 @@ export default function Component() {
                 currentRate = targetRate;
                 clearInterval(timerRate);
               }
-              setAnimatedNumbers(prev => ({ ...prev, recoveryRate: Math.floor(currentRate) }));
+              setAnimatedNumbers((prev) => ({
+                ...prev,
+                recoveryRate: Math.floor(currentRate),
+              }));
             }, 50);
 
             observer.unobserve(entry.target);
@@ -438,7 +472,7 @@ export default function Component() {
       { threshold: 0.3 }
     );
 
-    const impactSection = document.getElementById('impacto');
+    const impactSection = document.getElementById("impacto");
     if (impactSection) {
       observer.observe(impactSection);
     }
@@ -458,18 +492,24 @@ export default function Component() {
   };
 
   const handleDonationClick = () => {
-    const message = encodeURIComponent("Hola Misión Vallado, me gustaría hacer una donación para apoyar la protección de niños y niñas del abuso sexual. ¿Podrían brindarme más información sobre cómo puedo contribuir?");
-    window.open(`https://wa.me/573214019379?text=${message}`, '_blank');
+    const message = encodeURIComponent(
+      "Hola Misión Vallado, me gustaría hacer una donación para apoyar la protección de niños y niñas del abuso sexual. ¿Podrían brindarme más información sobre cómo puedo contribuir?"
+    );
+    window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
   };
 
   const handleBookDonationClick = () => {
-    const message = encodeURIComponent("Hola Misión Vallado, me gustaría donar el libro 'El Regalo del Rey' para un niño de bajos recursos. ¿Podrían informarme sobre el proceso de donación del libro?");
-    window.open(`https://wa.me/573214019379?text=${message}`, '_blank');
+    const message = encodeURIComponent(
+      "Hola Misión Vallado, me gustaría donar el libro 'El Regalo del Rey' para un niño de bajos recursos. ¿Podrían informarme sobre el proceso de donación del libro?"
+    );
+    window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
   };
 
   const handleLearnMoreClick = () => {
-    const message = encodeURIComponent("Hola Misión Vallado, me gustaría conocer más sobre su trabajo y programas de protección infantil. ¿Podrían brindarme más información sobre sus actividades?");
-    window.open(`https://wa.me/573214019379?text=${message}`, '_blank');
+    const message = encodeURIComponent(
+      "Hola Misión Vallado, me gustaría conocer más sobre su trabajo y programas de protección infantil. ¿Podrían brindarme más información sobre sus actividades?"
+    );
+    window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
   };
 
   // const handleAmountSelect = (amount: string) => {
@@ -730,7 +770,7 @@ export default function Component() {
           {/* Hero Section */}
           <section className="relative overflow-hidden bg-gray-50">
             <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
-            <div className="container px-4 py-16 md:py-24 lg:py-32 mx-auto">
+            <div className="container px-4 py-10 md:py-16 lg:py-16 mx-auto">
               <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
                 <div className="flex flex-col justify-center space-y-8">
                   <div className="space-y-6">
@@ -824,7 +864,7 @@ export default function Component() {
                           priority
                         />
                       </div>
-                      
+
                       {heroImages.map((src, index) => (
                         <div
                           key={index}
@@ -846,8 +886,8 @@ export default function Component() {
                       ))}
                     </div>
                   </div>
-                  <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-red-400 to-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" />
-                  <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-gradient-to-r from-red-600 to-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" />
+                  {/* <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-red-400 to-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" />
+                  <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-gradient-to-r from-red-600 to-red-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" /> */}
                 </div>
               </div>
             </div>
@@ -927,21 +967,21 @@ export default function Component() {
                 </Link>
 
                 <Link
-                  href="https://wa.me/573214019379?text=Hola%20Misión%20Vallado%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20programas%20de%20protección%20infantil."
+                  href="https://www.tiktok.com/@misionvallado"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <MessageCircle className="w-8 h-8 text-white" />
+                    <Video className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    WhatsApp
+                    TikTok
                   </h3>
                   <p className="text-sm text-gray-600 text-center">
                     {language === "es"
-                      ? "Contáctanos directamente"
-                      : "Contact us directly"}
+                      ? "Videos cortos y mensajes"
+                      : "Short videos and messages"}
                   </p>
                 </Link>
               </div>
@@ -961,20 +1001,14 @@ export default function Component() {
                     ? "Nuestros Pilares Fundamentales"
                     : "Our Fundamental Pillars"}
                 </Badge>
-                <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+                <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
                   {language === "es" ? (
                     <>
-                      <span className="block">Misión, Visión</span>
-                      <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                        y Valores
-                      </span>
+                      <span>Misión, Visión y Valores</span>
                     </>
                   ) : (
                     <>
-                      <span className="block">Mission, Vision</span>
-                      <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                        & Values
-                      </span>
+                      <span className="block">Mission, Vision & Values</span>
                     </>
                   )}
                 </h2>
@@ -985,275 +1019,174 @@ export default function Component() {
                 </p>
               </div>
 
-              {/* Mission - Large Featured Card */}
-              <div className="mb-16">
-                <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 group relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 to-red-600"></div>
-                  <CardContent className="p-12 md:p-16">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                      <div>
-                        <div className="flex items-center mb-8">
-                          <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <Shield className="h-10 w-10 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-4xl font-bold text-gray-900 mb-2">
-                              {language === "es"
-                                ? "Nuestra Misión"
-                                : "Our Mission"}
-                            </h3>
-                            <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
-                          </div>
-                        </div>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          {language === "es"
-                            ? "Proteger integralmente a niños, niñas y adolescentes del abuso sexual y otras formas de violencia, a través de programas de prevención, atención especializada y educación comunitaria, promoviendo entornos seguros que garanticen su desarrollo pleno y dignidad."
-                            : "Comprehensively protect children and adolescents from sexual abuse and other forms of violence, through prevention programs, specialized care and community education, promoting safe environments that guarantee their full development and dignity."}
-                        </p>
-                      </div>
-                      <div className="relative">
-                        <div className="w-full h-80 rounded-3xl flex items-center justify-center relative overflow-hidden">
-                          <Image
-                            src="/imagen10.jpeg"
-                            alt="Misión Vallado - Protección Infantil"
-                            fill
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-red-500/40"></div>
-                          <div className="text-center z-10 relative">
-                            <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-lg">
-                              <Shield className="h-12 w-12 text-red-500" />
-                            </div>
-                            <p className="text-white font-semibold text-lg">
-                              {language === "es"
-                                ? "Protección Integral"
-                                : "Comprehensive Protection"}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+              {/* Mission and Vision - Side by Side */}
+              <div className="grid lg:grid-cols-2 gap-12 mb-20">
+                {/* Mission */}
+                <div className="space-y-6">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                      <Shield className="h-8 w-8 text-white" />
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Vision - Large Featured Card */}
-              <div className="mb-16">
-                <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 group relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 to-red-600"></div>
-                  <CardContent className="p-12 md:p-16">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                      <div className="lg:order-2">
-                        <div className="flex items-center mb-8">
-                          <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            <TrendingUp className="h-10 w-10 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-4xl font-bold text-gray-900 mb-2">
-                              {language === "es"
-                                ? "Nuestra Visión"
-                                : "Our Vision"}
-                            </h3>
-                            <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
-                          </div>
-                        </div>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          {language === "es"
-                            ? "Ser la organización líder en Colombia en la prevención del abuso sexual infantil, reconocida por nuestro impacto transformador en la construcción de una sociedad donde todos los niños y niñas crezcan libres de violencia, en entornos seguros y protectores."
-                            : "To be the leading organization in Colombia in the prevention of child sexual abuse, recognized for our transformative impact in building a society where all children grow up free from violence, in safe and protective environments."}
-                        </p>
-                      </div>
-                      <div className="lg:order-1 relative">
-                        <div className="w-full h-80 rounded-3xl flex items-center justify-center relative overflow-hidden">
-                          <Image
-                            src="/imagen9.jpeg"
-                            alt="Misión Vallado - Visión de Futuro"
-                            fill
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-red-500/40"></div>
-                          <div className="text-center z-10 relative">
-                            <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-lg">
-                              <TrendingUp className="h-12 w-12 text-red-500" />
-                            </div>
-                            <p className="text-white font-semibold text-lg">
-                              {language === "es"
-                                ? "Liderazgo Nacional"
-                                : "National Leadership"}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <div>
+                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                        MISIÓN
+                      </h3>
+                      <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Values - Creative Grid Layout */}
-              <div className="mb-8">
-                <div className="text-center mb-12">
-                  <h3 className="text-4xl font-bold text-gray-900 mb-4">
-                    {language === "es"
-                      ? "Nuestros Valores Fundamentales"
-                      : "Our Core Values"}
-                  </h3>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    {language === "es"
-                      ? "Los principios que guían cada una de nuestras acciones y decisiones"
-                      : "The principles that guide each of our actions and decisions"}
-                  </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {/* Value 1 - Pasión */}
-                  <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                        <Heart className="h-8 w-8 text-white" />
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        {language === "es" ? "Pasión" : "Passion"}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {language === "es"
-                          ? "Dedicamos nuestro corazón y energía a proteger a cada niño con amor y determinación"
-                          : "We dedicate our heart and energy to protecting every child with love and determination"}
-                      </p>
-                      <div className="mt-4 w-8 h-1 bg-red-500 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Value 2 - Transparencia */}
-                  <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                        <CheckCircle className="h-8 w-8 text-white" />
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        {language === "es" ? "Transparencia" : "Transparency"}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {language === "es"
-                          ? "Actuamos con honestidad total y rendición de cuentas en cada acción"
-                          : "We act with complete honesty and accountability in every action"}
-                      </p>
-                      <div className="mt-4 w-8 h-1 bg-red-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Value 3 - Respeto */}
-                  <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                        <Users className="h-8 w-8 text-white" />
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        {language === "es" ? "Respeto" : "Respect"}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {language === "es"
-                          ? "Valoramos la dignidad y derechos de cada persona sin excepción"
-                          : "We value the dignity and rights of every person without exception"}
-                      </p>
-                      <div className="mt-4 w-8 h-1 bg-red-500 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Value 4 - Compasión */}
-                  <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                        <Heart className="h-8 w-8 text-white" />
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        {language === "es" ? "Compasión" : "Compassion"}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {language === "es"
-                          ? "Acompañamos con empatía y cuidado a quienes han sufrido, ofreciendo esperanza"
-                          : "We accompany with empathy and care those who have suffered, offering hope"}
-                      </p>
-                      <div className="mt-4 w-8 h-1 bg-red-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Value 5 - Compromiso */}
-                  <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                        <Shield className="h-8 w-8 text-white" />
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        {language === "es" ? "Compromiso" : "Commitment"}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {language === "es"
-                          ? "Dedicación inquebrantable a nuestra causa y a la comunidad que servimos"
-                          : "Unwavering dedication to our cause and the community we serve"}
-                      </p>
-                      <div className="mt-4 w-8 h-1 bg-red-500 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Value 6 - Solidaridad */}
-                  <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
-                        <Users className="h-8 w-8 text-white" />
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        {language === "es" ? "Solidaridad" : "Solidarity"}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {language === "es"
-                          ? "Trabajamos unidos como comunidad para crear un mundo más seguro para todos"
-                          : "We work together as a community to create a safer world for everyone"}
-                      </p>
-                      <div className="mt-4 w-8 h-1 bg-red-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-
-              {/* Bottom CTA Section */}
-              <div className="mt-16 text-center">
-                <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h4 className="text-2xl md:text-3xl font-bold mb-4">
-                      {language === "es"
-                        ? "Únete a nuestra misión de proteger la infancia"
-                        : "Join our mission to protect childhood"}
-                    </h4>
-                    <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
-                      {language === "es"
-                        ? "Cada acción cuenta, cada donación importa, cada persona puede hacer la diferencia"
-                        : "Every action counts, every donation matters, every person can make a difference"}
-                    </p>
-                    <Button
-                      size="lg"
-                      className="bg-white text-red-500 hover:bg-gray-100 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all"
-                      onClick={handleDonationClick}
-                    >
-                      <Heart className="mr-2 h-5 w-5" />
-                      {language === "es"
-                        ? "Hacer una Donación"
-                        : "Make a Donation"}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
                   </div>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Protegemos a niños y niñas del abuso sexual, educando
+                    y movilizando a padres, cuidadores, comunidades y
+                    actores sociales, promoviendo la prevención, detección
+                    temprana y atención integral para su desarrollo
+                    seguro.
+                  </p>
+                  <div className="w-full h-48 rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                      src="/MISION_1.jpeg"
+                      alt="Misión Vallado - Protección Infantil"
+                      width={400}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Vision */}
+                <div className="space-y-6">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                      <TrendingUp className="h-8 w-8 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                        VISIÓN
+                      </h3>
+                      <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+                    </div>
+                  </div>
+                  <p className="text-lg text-gray-700 leading-relaxed md:mb-13">
+                    Un mundo donde los niños y niñas tengan una infancia
+                    feliz, sin traumas, ni secuelas que les impidan
+                    desarrollar todo su potencial y alcanzar sus sueños.
+                  </p>
+                  <div className="w-full h-48 rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                      src="/MISION_2.jpeg"
+                      alt="Misión Vallado - Visión de Futuro"
+                      width={400}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Values Section */}
+              <div className="space-y-8">
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                    <Award className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                      NUESTROS VALORES
+                    </h3>
+                    <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
+                  </div>
+                </div>
+                <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+                  Los principios que guían cada una de nuestras acciones y decisiones, 
+                  formando la base de nuestro compromiso con la protección infantil.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                  {[
+                    "Pasión",
+                    "Transparencia", 
+                    "Respeto",
+                    "Compasión",
+                    "Compromiso",
+                    "Solidaridad",
+                  ].map((valor, idx) => (
+                    <div
+                      key={idx}
+                      className="border border-red-500 text-red-500 font-semibold px-4 py-3 rounded-xl text-center hover:from-red-100 hover:to-red-200 hover:border-red-300 transition-all duration-300"
+                    >
+                      {valor}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Why We Do It Section */}
+          <section id="why-we-do-it" className="py-20 bg-gray-50">
+            <div className="container px-4 mx-auto">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <Badge
+                  variant="outline"
+                  className="mb-4 border-red-200 text-red-600"
+                >
+                  {t.whyWeDoIt}
+                </Badge>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                  {t.whyWeDoItTitle}
+                </h2>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  {t.whyWeDoItDescription}
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {t.whyWeDoItStats.map((stat, index) => (
+                  <Card key={index} className="border-0 shadow-lg">
+                    <CardContent className="p-8">
+                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                        <Shield className="h-6 w-6 text-red-500" />
+                      </div>
+                      <p className="text-gray-600 leading-relaxed">{stat}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom CTA Section */}
+            <div className="mt-16 text-center container px-10 mx-auto">
+              <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <div className="relative z-10">
+                  <h4 className="text-2xl md:text-3xl font-bold mb-4">
+                    {language === "es"
+                      ? "Únete a nuestra misión de proteger la infancia"
+                      : "Join our mission to protect childhood"}
+                  </h4>
+                  <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
+                    {language === "es"
+                      ? "Cada acción cuenta, cada donación importa, cada persona puede hacer la diferencia"
+                      : "Every action counts, every donation matters, every person can make a difference"}
+                  </p>
+                  <Button
+                    size="lg"
+                    className="bg-white text-red-500 hover:bg-gray-100 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all"
+                    onClick={handleDonationClick}
+                  >
+                    <Heart className="mr-2 h-5 w-5" />
+                    {language === "es"
+                      ? "Hacer una Donación"
+                      : "Make a Donation"}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Programs Section */}
-          <section id="programas" className="py-20 bg-white border-t border-gray-200">
+          <section
+            id="programas"
+            className="py-20 bg-white border-t border-gray-200"
+          >
             <div className="container px-4 mx-auto">
               <div className="max-w-3xl mx-auto text-center mb-16">
                 <Badge
@@ -1348,7 +1281,7 @@ export default function Component() {
                       <div
                         key={index}
                         className={`absolute inset-0 transition-opacity duration-500 ${
-                          index === currentImageIndex
+                          index === currentImagenIndex2
                             ? "opacity-100"
                             : "opacity-0"
                         }`}
@@ -1370,10 +1303,7 @@ export default function Component() {
           </section>
 
           {/* Impact Section */}
-          <section
-            id="impacto"
-            className="py-20 bg-gray-50"
-          >
+          <section id="impacto" className="py-20 bg-gray-50">
             <div className="container px-4 mx-auto">
               <div className="max-w-3xl mx-auto text-center mb-16">
                 <Badge
@@ -1434,39 +1364,6 @@ export default function Component() {
               </div>
             </div>
           </section>
-
-          {/* Why We Do It Section */}
-          {/* <section id="why-we-do-it" className="py-20 bg-white">
-            <div className="container px-4 mx-auto">
-              <div className="max-w-3xl mx-auto text-center mb-16">
-                <Badge
-                  variant="outline"
-                  className="mb-4 border-red-200 text-red-600"
-                >
-                  {t.whyWeDoIt}
-                </Badge>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  {t.whyWeDoItTitle}
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  {t.whyWeDoItDescription}
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8">
-                {t.whyWeDoItStats.map((stat, index) => (
-                  <Card key={index} className="border-0 shadow-lg">
-                    <CardContent className="p-8">
-                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                        <Shield className="h-6 w-6 text-red-500" />
-                      </div>
-                      <p className="text-gray-600 leading-relaxed">{stat}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section> */}
 
           {/* Videos Section */}
           <section id="videos" className="py-20 bg-white border-y">
@@ -1565,31 +1462,39 @@ export default function Component() {
           {/* Support Section */}
           <section className="py-20 bg-gray-50">
             <div className="container px-4 mx-auto">
-              <div className="max-w-3xl mx-auto text-center mb-16">
+              <div className="max-w-3xl mx-auto text-center mb-10">
                 <Badge
                   variant="outline"
                   className="mb-4 border-red-200 text-red-600"
                 >
-                  <Users className="w-3 h-3 mr-1" />
-                  {t.supportTitle}
+                  <Heart className="w-3 h-3 mr-1" />
+                  {t.supportTitle2}
                 </Badge>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">
                   {t.supportTitle}
                 </h2>
-                <p className="text-xl text-gray-600">{t.supportDescription}</p>
+                <p className="text-xl text-gray-600 mb-2">
+                  {t.supportDescription}
+                </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {t.supportWays.map((way, index) => (
-                  <Card key={index} className="border-0 shadow-lg">
-                    <CardContent className="p-8">
-                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                        <CheckCircle className="h-6 w-6 text-red-500" />
-                      </div>
-                      <p className="text-gray-600 leading-relaxed">{way}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="flex justify-center">
+                <ul
+                  className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8 gap-y-4 mx-auto px-8"
+                  style={{ listStyle: "none" }}
+                >
+                  {t.supportWays.map((way, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start space-x-3 text-lg justify-start"
+                    >
+                      <span className="mt-1">
+                        <CheckCircle className="w-6 h-6 text-red-500 font-bold" />
+                      </span>
+                      <span className="font-semibold text-gray-800">{way}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </section>
@@ -1662,7 +1567,7 @@ export default function Component() {
                     </blockquote>
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-red-400 to-red-600 rounded-full flex items-center justify-center">
-                        <span className="text-white font-semibold">A</span>
+                        <span className="text-white font-semibold">E</span>
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">
@@ -1760,12 +1665,12 @@ export default function Component() {
                     <Facebook className="w-5 h-5" />
                   </Link>
                   <Link
-                    href="https://wa.me/573214019379?text=Hola%20Misión%20Vallado%2C%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20programas%20de%20protección%20infantil."
+                    href="https://www.tiktok.com/@misionvallado"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
                   >
-                    <MessageCircle className="w-5 h-5" />
+                    <Video className="w-5 h-5" />
                   </Link>
                 </div>
               </div>
