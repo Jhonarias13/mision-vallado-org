@@ -15,7 +15,6 @@ import {
   Shield,
   Users,
   BookOpen,
-  Phone,
   Mail,
   MapPin,
   Star,
@@ -32,6 +31,7 @@ import {
   Facebook,
   MessageCircle,
   Video,
+  AlertCircle,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -68,7 +68,8 @@ const translations = {
 
     // Social Media
     followUsSocialMedia: "Síguenos en Redes Sociales",
-    joinCommunity: "Únete a nuestra comunidad y mantente informado sobre nuestras actividades y eventos",
+    joinCommunity:
+      "Únete a nuestra comunidad y mantente informado sobre nuestras actividades y eventos",
     youtubeDescription: "Videos educativos y testimonios",
     instagramDescription: "Momentos y actividades",
     facebookDescription: "Noticias y eventos",
@@ -77,11 +78,13 @@ const translations = {
     // Pillars
     fundamentalPillars: "Nuestros Pilares Fundamentales",
     missionVisionValues: "Misión, Visión y Valores",
-    pillarsDescription: "Los cimientos que sostienen nuestro compromiso inquebrantable con la protección de la infancia y la construcción de un futuro más seguro",
+    pillarsDescription:
+      "Los cimientos que sostienen nuestro compromiso inquebrantable con la protección de la infancia y la construcción de un futuro más seguro",
     mission: "MISIÓN",
     vision: "VISIÓN",
     ourValues: "NUESTROS VALORES",
-    valuesDescription: "Los principios que guían cada una de nuestras acciones y decisiones, formando la base de nuestro compromiso con la protección infantil.",
+    valuesDescription:
+      "Los principios que guían cada una de nuestras acciones y decisiones, formando la base de nuestro compromiso con la protección infantil.",
     passion: "Pasión",
     transparency: "Transparencia",
     respect: "Respeto",
@@ -142,28 +145,37 @@ const translations = {
       "Un menor que ha sido víctima de abuso sexual puede experimentar a lo largo de su vida trastornos alimenticios y del sueño, así como también baja autoestima, ansiedad, depresión, consumo de sustancias psicoactivas, conductas sexuales de riesgo, autolesiones e incluso intentos de suicidio.",
     ],
     painConfusion: "Dolor y Desconcierto",
-    painConfusionDesc: "Cuando una niña o un niño es víctima de abuso sexual, experimenta dolor, sufrimiento y desconcierto, pues la mayoría de las veces no alcanza a comprender lo que está sucediendo.",
+    painConfusionDesc:
+      "Cuando una niña o un niño es víctima de abuso sexual, experimenta dolor, sufrimiento y desconcierto, pues la mayoría de las veces no alcanza a comprender lo que está sucediendo.",
     closePerpetrators: "85% Agresores Cercanos",
-    closePerpetratorsDesc: "El agresor en la mayoría de los casos (85%), es alguien cercano o incluso parte de su familia, esto contribuye a que guarde silencio por miedo.",
+    closePerpetratorsDesc:
+      "El agresor en la mayoría de los casos (85%), es alguien cercano o incluso parte de su familia, esto contribuye a que guarde silencio por miedo.",
     oneInFourGirls: "1 de cada 4 Niñas",
-    oneInFourGirlsDesc: "A nivel mundial una de cada cuatro niñas y uno de cada cinco niños es víctima de abuso sexual.",
+    oneInFourGirlsDesc:
+      "A nivel mundial una de cada cuatro niñas y uno de cada cinco niños es víctima de abuso sexual.",
     onlyOneInTen: "Solo 1 de cada 10",
-    onlyOneInTenDesc: "Solo uno de cada diez niños abusados cuenta lo sucedido y muchas veces lo hace años después de ocurrido el abuso.",
+    onlyOneInTenDesc:
+      "Solo uno de cada diez niños abusados cuenta lo sucedido y muchas veces lo hace años después de ocurrido el abuso.",
     lifelongConsequences: "Secuelas de Por Vida",
-    lifelongConsequencesDesc: "Un menor que ha sido víctima de abuso sexual puede experimentar trastornos alimenticios, baja autoestima, ansiedad, depresión y otros problemas.",
+    lifelongConsequencesDesc:
+      "Un menor que ha sido víctima de abuso sexual puede experimentar trastornos alimenticios, baja autoestima, ansiedad, depresión y otros problemas.",
     yourHelpMakesDifference: "Tu Ayuda Hace la Diferencia",
-    yourHelpMakesDifferenceDesc: "Con tu ayuda podemos hacer la diferencia en la vida de los niños y las niñas, ellos aprenderán a no callar lo que les daña.",
+    yourHelpMakesDifferenceDesc:
+      "Con tu ayuda podemos hacer la diferencia en la vida de los niños y las niñas, ellos aprenderán a no callar lo que les daña.",
     joinMissionProtect: "Únete a nuestra misión de proteger la infancia",
-    everyActionCounts: "Cada acción cuenta, cada donación importa, cada persona puede hacer la diferencia",
+    everyActionCounts:
+      "Cada acción cuenta, cada donación importa, cada persona puede hacer la diferencia",
 
     // Videos
     videosTitle: "Nuestros Videos",
     videosDescription:
       "Conoce más sobre nuestro trabajo a través de estos videos",
     video1Title: "Prevención de Abuso Sexual Infantil",
-    video1Description: "Video educativo sobre prevención de abuso sexual infantil",
+    video1Description:
+      "Video educativo sobre prevención de abuso sexual infantil",
     video2Title: "Vallado Party",
-    video2Description: "Conoce más sobre nuestras fiestas de cumpleaños con propósito",
+    video2Description:
+      "Conoce más sobre nuestras fiestas de cumpleaños con propósito",
     video3Title: "Testimonio de Superación",
     video3Description: "Historia de esperanza y transformación",
 
@@ -238,14 +250,18 @@ const translations = {
     close: "Cerrar",
 
     // WhatsApp Messages
-    donationMessage: "Hola Misión Vallado, me gustaría hacer una donación para apoyar la protección de niños y niñas del abuso sexual. ¿Podrían brindarme más información sobre cómo puedo contribuir?",
-    bookDonationMessage: "Hola Misión Vallado, me gustaría donar el libro 'El Regalo del Rey' para un niño de bajos recursos. ¿Podrían informarme sobre el proceso de donación del libro?",
-    learnMoreMessage: "Hola Misión Vallado, me gustaría conocer más sobre su trabajo y programas de protección infantil. ¿Podrían brindarme más información sobre sus actividades?",
+    donationMessage:
+      "Hola Misión Vallado, me gustaría hacer una donación para apoyar la protección de niños y niñas del abuso sexual. ¿Podrían brindarme más información sobre cómo puedo contribuir?",
+    bookDonationMessage:
+      "Hola Misión Vallado, me gustaría donar el libro 'El Regalo del Rey' para un niño de bajos recursos. ¿Podrían informarme sobre el proceso de donación del libro?",
+    learnMoreMessage:
+      "Hola Misión Vallado, me gustaría conocer más sobre su trabajo y programas de protección infantil. ¿Podrían brindarme más información sobre sus actividades?",
 
     // SEO
     pageTitle: "Misión Vallado - Protegiendo Niños del Abuso Sexual",
-    pageDescription: "Fundación dedicada a proteger niños, niñas y adolescentes del abuso sexual en Colombia",
-    
+    pageDescription:
+      "Fundación dedicada a proteger niños, niñas y adolescentes del abuso sexual en Colombia",
+
     // Alt texts
     heroAlt: "Hero - Misión Vallado",
     heroAltWithNumber: "Hero {number} - Misión Vallado",
@@ -253,7 +269,7 @@ const translations = {
     visionImageAlt: "Misión Vallado - Visión de Futuro",
     bookImageAlt: "El Regalo del Rey - Misión Vallado",
     logoAlt: "Misión Vallado",
-    
+
     // Hero title parts
     heroTitlePart1: "Protegemos a los",
     heroTitlePart2: "niños",
@@ -291,7 +307,8 @@ const translations = {
 
     // Social Media
     followUsSocialMedia: "Follow Us on Social Media",
-    joinCommunity: "Join our community and stay informed about our activities and events",
+    joinCommunity:
+      "Join our community and stay informed about our activities and events",
     youtubeDescription: "Educational videos and testimonials",
     instagramDescription: "Moments and activities",
     facebookDescription: "News and events",
@@ -300,11 +317,13 @@ const translations = {
     // Pillars
     fundamentalPillars: "Our Fundamental Pillars",
     missionVisionValues: "Mission, Vision & Values",
-    pillarsDescription: "The foundations that support our unwavering commitment to child protection and building a safer future",
+    pillarsDescription:
+      "The foundations that support our unwavering commitment to child protection and building a safer future",
     mission: "MISSION",
     vision: "VISION",
     ourValues: "OUR VALUES",
-    valuesDescription: "The principles that guide each of our actions and decisions, forming the foundation of our commitment to child protection.",
+    valuesDescription:
+      "The principles that guide each of our actions and decisions, forming the foundation of our commitment to child protection.",
     passion: "Passion",
     transparency: "Transparency",
     respect: "Respect",
@@ -365,19 +384,26 @@ const translations = {
       "A minor who has been a victim of sexual abuse may experience eating and sleep disorders throughout their life, as well as low self-esteem, anxiety, depression, psychoactive substance use, risky sexual behaviors, self-harm, and even suicide attempts.",
     ],
     painConfusion: "Pain and Confusion",
-    painConfusionDesc: "When a child is a victim of sexual abuse, they experience pain, suffering, and confusion, as most of the time they cannot understand what is happening.",
+    painConfusionDesc:
+      "When a child is a victim of sexual abuse, they experience pain, suffering, and confusion, as most of the time they cannot understand what is happening.",
     closePerpetrators: "85% Close Perpetrators",
-    closePerpetratorsDesc: "The perpetrator in most cases (85%) is someone close to or even part of their family, which contributes to their silence due to fear.",
+    closePerpetratorsDesc:
+      "The perpetrator in most cases (85%) is someone close to or even part of their family, which contributes to their silence due to fear.",
     oneInFourGirls: "1 in 4 Girls",
-    oneInFourGirlsDesc: "Worldwide, one in four girls and one in five boys is a victim of sexual abuse.",
+    oneInFourGirlsDesc:
+      "Worldwide, one in four girls and one in five boys is a victim of sexual abuse.",
     onlyOneInTen: "Only 1 in 10",
-    onlyOneInTenDesc: "Only one in ten abused children tells what happened, and often years after the abuse occurred.",
+    onlyOneInTenDesc:
+      "Only one in ten abused children tells what happened, and often years after the abuse occurred.",
     lifelongConsequences: "Lifelong Consequences",
-    lifelongConsequencesDesc: "A minor who has been a victim of sexual abuse may experience eating disorders, low self-esteem, anxiety, depression, and other problems.",
+    lifelongConsequencesDesc:
+      "A minor who has been a victim of sexual abuse may experience eating disorders, low self-esteem, anxiety, depression, and other problems.",
     yourHelpMakesDifference: "Your Help Makes a Difference",
-    yourHelpMakesDifferenceDesc: "With your help, we can make a difference in the lives of children. They will learn not to remain silent about what harms them.",
+    yourHelpMakesDifferenceDesc:
+      "With your help, we can make a difference in the lives of children. They will learn not to remain silent about what harms them.",
     joinMissionProtect: "Join our mission to protect childhood",
-    everyActionCounts: "Every action counts, every donation matters, every person can make a difference",
+    everyActionCounts:
+      "Every action counts, every donation matters, every person can make a difference",
 
     // Videos
     videosTitle: "Our Videos",
@@ -460,14 +486,18 @@ const translations = {
     close: "Close",
 
     // WhatsApp Messages
-    donationMessage: "Hello Misión Vallado, I would like to make a donation to support the protection of children from sexual abuse. Could you provide me with more information about how I can contribute?",
-    bookDonationMessage: "Hello Misión Vallado, I would like to donate the book 'The King's Gift' for a child in need. Could you inform me about the book donation process?",
-    learnMoreMessage: "Hello Misión Vallado, I would like to learn more about your work and child protection programs. Could you provide me with more information about your activities?",
+    donationMessage:
+      "Hello Misión Vallado, I would like to make a donation to support the protection of children from sexual abuse. Could you provide me with more information about how I can contribute?",
+    bookDonationMessage:
+      "Hello Misión Vallado, I would like to donate the book 'The King's Gift' for a child in need. Could you inform me about the book donation process?",
+    learnMoreMessage:
+      "Hello Misión Vallado, I would like to learn more about your work and child protection programs. Could you provide me with more information about your activities?",
 
     // SEO
     pageTitle: "Misión Vallado - Protecting Children from Sexual Abuse",
-    pageDescription: "Foundation dedicated to protecting children and adolescents from sexual abuse in Colombia",
-    
+    pageDescription:
+      "Foundation dedicated to protecting children and adolescents from sexual abuse in Colombia",
+
     // Alt texts
     heroAlt: "Hero - Misión Vallado",
     heroAltWithNumber: "Hero {number} - Misión Vallado",
@@ -475,7 +505,7 @@ const translations = {
     visionImageAlt: "Misión Vallado - Vision of the Future",
     bookImageAlt: "The King's Gift - Misión Vallado",
     logoAlt: "Misión Vallado",
-    
+
     // Hero title parts
     heroTitlePart1: "We protect",
     heroTitlePart2: "children",
@@ -496,6 +526,11 @@ export default function Component() {
     trainedAdults: 0,
     recoveryRate: 0,
   });
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [modalType, setModalType] = useState<
+    "donation" | "learnMore" | "bookDonation"
+  >("donation");
+  const [countdown, setCountdown] = useState(5);
 
   const programImages = [
     "/imagen9.jpeg", // Formación Vallado - Imagen de programa general
@@ -532,7 +567,7 @@ export default function Component() {
         clearInterval(interval);
       }
     };
-  }, [heroImages.length]);
+  }, [heroImages.length, isHoveringProgram]);
 
   useEffect(() => {
     let interval2: NodeJS.Timeout;
@@ -549,7 +584,7 @@ export default function Component() {
         clearInterval(interval2);
       }
     };
-  }, [programImages.length]);
+  }, [programImages.length, isHoveringProgram]);
 
   // Animate numbers when impact section is visible
   useEffect(() => {
@@ -632,55 +667,94 @@ export default function Component() {
   };
 
   const handleDonationClick = () => {
-    const subject = encodeURIComponent("Donación - Misión Vallado");
-    const body = encodeURIComponent(t.donationMessage);
-    window.open(`mailto:${t.email}?subject=${subject}&body=${body}`, "_blank");
+    setModalType("donation");
+    setShowEmailModal(true);
   };
 
   const handleBookDonationClick = () => {
-    const subject = encodeURIComponent("Donación de Libro - El Regalo del Rey");
-    const body = encodeURIComponent(t.bookDonationMessage);
-    window.open(`mailto:${t.email}?subject=${subject}&body=${body}`, "_blank");
+    setModalType("bookDonation");
+    setShowEmailModal(true);
   };
 
   const handleLearnMoreClick = () => {
-    const subject = encodeURIComponent("Información sobre Misión Vallado");
-    const body = encodeURIComponent(t.learnMoreMessage);
-    window.open(`mailto:${t.email}?subject=${subject}&body=${body}`, "_blank");
+    setModalType("learnMore");
+    setShowEmailModal(true);
   };
 
-  // const handleAmountSelect = (amount: string) => {
-  //   setSelectedAmount(amount);
-  //   setCustomAmount("");
-  // };
+  const handleModalCancel = () => {
+    setShowEmailModal(false);
+    setCountdown(5);
+  };
 
-  // const handleCustomAmountChange = (value: string) => {
-  //   setCustomAmount(value);
-  //   setSelectedAmount("");
-  // };
+  // Countdown effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
 
-  // const getCurrentAmount = () => {
-  //   return customAmount || selectedAmount;
-  // };
+    if (showEmailModal && countdown > 0) {
+      interval = setInterval(() => {
+        setCountdown((prev) => {
+          if (prev <= 1) {
+            // Auto redirect when countdown reaches 0
+            const handleAutoRedirect = () => {
+              setShowEmailModal(false);
 
-  // const handleDonationProcess = () => {
-  //   setIsProcessing(true);
-  //   // Simulamos el proceso de donación
-  //   setTimeout(() => {
-  //     setIsProcessing(false);
-  //     setDonationModalOpen(false);
-  //     setSuccessModalOpen(true);
-  //     // Limpiamos los valores
-  //     setSelectedAmount("");
-  //     setCustomAmount("");
-  //   }, 2000);
-  // };
+              let subject = "";
+              let body = "";
 
-  // const handleSuccessClose = () => {
-  //   setSuccessModalOpen(false);
-  //   // Scroll al inicio de la página
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // };
+              switch (modalType) {
+                case "donation":
+                  subject = encodeURIComponent("Donación - Misión Vallado");
+                  body = encodeURIComponent(t.donationMessage);
+                  break;
+                case "bookDonation":
+                  subject = encodeURIComponent(
+                    "Donación de Libro - El Regalo del Rey"
+                  );
+                  body = encodeURIComponent(t.bookDonationMessage);
+                  break;
+                case "learnMore":
+                  subject = encodeURIComponent(
+                    "Información sobre Misión Vallado"
+                  );
+                  body = encodeURIComponent(t.learnMoreMessage);
+                  break;
+              }
+
+              window.open(
+                `mailto:${t.email}?subject=${subject}&body=${body}`,
+                "_blank"
+              );
+            };
+
+            handleAutoRedirect();
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [
+    showEmailModal,
+    countdown,
+    modalType,
+    t.donationMessage,
+    t.bookDonationMessage,
+    t.learnMoreMessage,
+    t.email,
+  ]);
+
+  // Reset countdown when modal opens
+  useEffect(() => {
+    if (showEmailModal) {
+      setCountdown(5);
+    }
+  }, [showEmailModal]);
 
   const youtubeVideos = [
     {
@@ -907,22 +981,36 @@ export default function Component() {
                       {t.childProtection}
                     </Badge>
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                      <span className="text-gray-900">
-                        {t.heroTitlePart1}
-                      </span>{" "}
+                      <span className="text-gray-900">{t.heroTitlePart1}</span>{" "}
                       {language === "es" ? (
                         <>
-                          <span className="text-red-500">{t.heroTitlePart2} </span>
-                          <span className="text-gray-900">{t.heroTitlePart3}</span>{" "}
-                          <span className="text-red-500">{t.heroTitlePart4}</span>{" "}
-                          <span className="text-gray-900">{t.heroTitlePart5}</span>
+                          <span className="text-red-500">
+                            {t.heroTitlePart2}{" "}
+                          </span>
+                          <span className="text-gray-900">
+                            {t.heroTitlePart3}
+                          </span>{" "}
+                          <span className="text-red-500">
+                            {t.heroTitlePart4}
+                          </span>{" "}
+                          <span className="text-gray-900">
+                            {t.heroTitlePart5}
+                          </span>
                         </>
                       ) : (
                         <>
-                          <span className="text-red-500">{t.heroTitlePart2}</span>{" "}
-                          <span className="text-gray-900">{t.heroTitlePart3}</span>{" "}
-                          <span className="text-red-500">{t.heroTitlePart4}</span>{" "}
-                          <span className="text-gray-900">{t.heroTitlePart5}</span>
+                          <span className="text-red-500">
+                            {t.heroTitlePart2}
+                          </span>{" "}
+                          <span className="text-gray-900">
+                            {t.heroTitlePart3}
+                          </span>{" "}
+                          <span className="text-red-500">
+                            {t.heroTitlePart4}
+                          </span>{" "}
+                          <span className="text-gray-900">
+                            {t.heroTitlePart5}
+                          </span>
                         </>
                       )}
                     </h1>
@@ -1003,7 +1091,10 @@ export default function Component() {
                           <Image
                             src={src}
                             fill
-                            alt={t.heroAltWithNumber.replace("{number}", (index + 1).toString())}
+                            alt={t.heroAltWithNumber.replace(
+                              "{number}",
+                              (index + 1).toString()
+                            )}
                             className="rounded-2xl shadow-2xl object-cover w-full h-full"
                             sizes="(max-width: 320px) 280px, (max-width: 640px) 300px, (max-width: 768px) 500px, 600px"
                             priority={index === 0}
@@ -1026,9 +1117,7 @@ export default function Component() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   {t.followUsSocialMedia}
                 </h2>
-                <p className="text-lg text-gray-600">
-                  {t.joinCommunity}
-                </p>
+                <p className="text-lg text-gray-600">{t.joinCommunity}</p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <Link
@@ -1916,11 +2005,80 @@ export default function Component() {
         </footer>
       </div>
 
-      {/* Donation Modal */}
-      {/* Removed - Now redirecting to WhatsApp */}
+      {/* Email Modal */}
+      {showEmailModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 mx-4">
+            {/* Close button */}
+            <button
+              onClick={handleModalCancel}
+              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
 
-      {/* Success Modal */}
-      {/* Removed - Now redirecting to WhatsApp */}
+            {/* Modal content */}
+            <div className="text-center space-y-4">
+              {/* Icon */}
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
+                <Mail className="w-8 h-8 text-red-500" />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-bold text-gray-900">
+                {modalType === "donation" &&
+                  (language === "es"
+                    ? "Redirigiendo a Email"
+                    : "Redirecting to Email")}
+                {modalType === "bookDonation" &&
+                  (language === "es" ? "Donación de Libro" : "Book Donation")}
+                {modalType === "learnMore" &&
+                  (language === "es" ? "Más Información" : "More Information")}
+              </h3>
+
+              {/* Countdown Timer */}
+              <div className="flex items-center justify-center space-x-2">
+                <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">
+                    {countdown}
+                  </span>
+                </div>
+                <span className="text-gray-600 font-medium">
+                  {language === "es" ? "segundos" : "seconds"}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-gray-600 leading-relaxed">
+                {language === "es"
+                  ? "Serás redirigido automáticamente a tu aplicación de email predeterminada."
+                  : "You will be automatically redirected to your default email application."}
+              </p>
+
+              {/* Alert */}
+              <div className="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                <AlertCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-blue-700 text-left">
+                  {language === "es"
+                    ? "Si no tienes configurada una aplicación de email, se abrirá tu navegador web."
+                    : "If you don't have an email application configured, your web browser will open."}
+                </p>
+              </div>
+
+              {/* Cancel Button */}
+              <div className="pt-4">
+                <Button
+                  onClick={handleModalCancel}
+                  variant="outline"
+                  className="w-full border-gray-300 hover:bg-gray-50"
+                >
+                  {language === "es" ? "Cancelar" : "Cancel"}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
