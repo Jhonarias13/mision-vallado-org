@@ -503,11 +503,9 @@ export default function Component() {
     "/imagen7.jpeg", // Vallado Party - Imagen de niño feliz
     "/imagen5.jpeg", // Diversión Vallado - Imagen de actividades
     "/imagen10.jpeg", // Diversión Vallado - Imagen de actividades
-    "/imagen11.jpeg", // Diversión Vallado - Imagen de actividades
     "/imagen12.jpeg", // Diversión Vallado - Imagen de actividades
     "/imagen13.jpeg", // Diversión Vallado - Imagen de actividades
     "/imagen14.jpeg", // Diversión Vallado - Imagen de actividades
-    "/imagen15.jpeg", // Diversión Vallado - Imagen de actividades
   ];
 
   const heroImages = [
@@ -551,7 +549,7 @@ export default function Component() {
         clearInterval(interval2);
       }
     };
-  }, [programImages.length, isHoveringProgram]);
+  }, [programImages.length]);
 
   // Animate numbers when impact section is visible
   useEffect(() => {
@@ -634,18 +632,21 @@ export default function Component() {
   };
 
   const handleDonationClick = () => {
-    const message = encodeURIComponent(t.donationMessage);
-    window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
+    const subject = encodeURIComponent("Donación - Misión Vallado");
+    const body = encodeURIComponent(t.donationMessage);
+    window.open(`mailto:${t.email}?subject=${subject}&body=${body}`, "_blank");
   };
 
   const handleBookDonationClick = () => {
-    const message = encodeURIComponent(t.bookDonationMessage);
-    window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
+    const subject = encodeURIComponent("Donación de Libro - El Regalo del Rey");
+    const body = encodeURIComponent(t.bookDonationMessage);
+    window.open(`mailto:${t.email}?subject=${subject}&body=${body}`, "_blank");
   };
 
   const handleLearnMoreClick = () => {
-    const message = encodeURIComponent(t.learnMoreMessage);
-    window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
+    const subject = encodeURIComponent("Información sobre Misión Vallado");
+    const body = encodeURIComponent(t.learnMoreMessage);
+    window.open(`mailto:${t.email}?subject=${subject}&body=${body}`, "_blank");
   };
 
   // const handleAmountSelect = (amount: string) => {
@@ -1845,10 +1846,10 @@ export default function Component() {
               <div>
                 <h3 className="font-semibold text-lg mb-4">{t.contact}</h3>
                 <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
+                  {/* <div className="flex items-center space-x-3">
                     <Phone className="h-4 w-4 text-red-400" />
                     <span className="text-gray-300">{t.phone}</span>
-                  </div>
+                  </div> */}
                   <div className="flex items-center space-x-3">
                     <Mail className="h-4 w-4 text-red-400" />
                     <span className="text-gray-300">{t.email}</span>
