@@ -47,6 +47,8 @@ const translations = {
     donate: "Donar",
     videos: "Videos",
     book: "El Regalo del Rey",
+    organizationName: "Misión Vallado",
+    protectingGeneration: "Protegiendo a una generación",
 
     // Hero
     childProtection: "¿Quiénes somos?",
@@ -63,6 +65,29 @@ const translations = {
     workshopsGiven: "Talleres Impartidos",
     yearsExperience: "Años de Experiencia",
     successRate: "Tasa de Éxito",
+
+    // Social Media
+    followUsSocialMedia: "Síguenos en Redes Sociales",
+    joinCommunity: "Únete a nuestra comunidad y mantente informado sobre nuestras actividades y eventos",
+    youtubeDescription: "Videos educativos y testimonios",
+    instagramDescription: "Momentos y actividades",
+    facebookDescription: "Noticias y eventos",
+    tiktokDescription: "Videos cortos y mensajes",
+
+    // Pillars
+    fundamentalPillars: "Nuestros Pilares Fundamentales",
+    missionVisionValues: "Misión, Visión y Valores",
+    pillarsDescription: "Los cimientos que sostienen nuestro compromiso inquebrantable con la protección de la infancia y la construcción de un futuro más seguro",
+    mission: "MISIÓN",
+    vision: "VISIÓN",
+    ourValues: "NUESTROS VALORES",
+    valuesDescription: "Los principios que guían cada una de nuestras acciones y decisiones, formando la base de nuestro compromiso con la protección infantil.",
+    passion: "Pasión",
+    transparency: "Transparencia",
+    respect: "Respeto",
+    compassion: "Compasión",
+    commitment: "Compromiso",
+    solidarity: "Solidaridad",
 
     // About
     ourMission: "Nuestro Pilar",
@@ -116,11 +141,31 @@ const translations = {
       "Solo uno de cada diez niños abusados cuenta lo sucedido y muchas veces lo hace años después de ocurrido el abuso",
       "Un menor que ha sido víctima de abuso sexual puede experimentar a lo largo de su vida trastornos alimenticios y del sueño, así como también baja autoestima, ansiedad, depresión, consumo de sustancias psicoactivas, conductas sexuales de riesgo, autolesiones e incluso intentos de suicidio.",
     ],
+    painConfusion: "Dolor y Desconcierto",
+    painConfusionDesc: "Cuando una niña o un niño es víctima de abuso sexual, experimenta dolor, sufrimiento y desconcierto, pues la mayoría de las veces no alcanza a comprender lo que está sucediendo.",
+    closePerpetrators: "85% Agresores Cercanos",
+    closePerpetratorsDesc: "El agresor en la mayoría de los casos (85%), es alguien cercano o incluso parte de su familia, esto contribuye a que guarde silencio por miedo.",
+    oneInFourGirls: "1 de cada 4 Niñas",
+    oneInFourGirlsDesc: "A nivel mundial una de cada cuatro niñas y uno de cada cinco niños es víctima de abuso sexual.",
+    onlyOneInTen: "Solo 1 de cada 10",
+    onlyOneInTenDesc: "Solo uno de cada diez niños abusados cuenta lo sucedido y muchas veces lo hace años después de ocurrido el abuso.",
+    lifelongConsequences: "Secuelas de Por Vida",
+    lifelongConsequencesDesc: "Un menor que ha sido víctima de abuso sexual puede experimentar trastornos alimenticios, baja autoestima, ansiedad, depresión y otros problemas.",
+    yourHelpMakesDifference: "Tu Ayuda Hace la Diferencia",
+    yourHelpMakesDifferenceDesc: "Con tu ayuda podemos hacer la diferencia en la vida de los niños y las niñas, ellos aprenderán a no callar lo que les daña.",
+    joinMissionProtect: "Únete a nuestra misión de proteger la infancia",
+    everyActionCounts: "Cada acción cuenta, cada donación importa, cada persona puede hacer la diferencia",
 
     // Videos
     videosTitle: "Nuestros Videos",
     videosDescription:
       "Conoce más sobre nuestro trabajo a través de estos videos",
+    video1Title: "Prevención de Abuso Sexual Infantil",
+    video1Description: "Video educativo sobre prevención de abuso sexual infantil",
+    video2Title: "Vallado Party",
+    video2Description: "Conoce más sobre nuestras fiestas de cumpleaños con propósito",
+    video3Title: "Testimonio de Superación",
+    video3Description: "Historia de esperanza y transformación",
 
     // Book
     bookTitle: "El Regalo del Rey",
@@ -174,11 +219,13 @@ const translations = {
       "Movimiento dedicado a la protección integral de niños, niñas y adolescentes contra el abuso sexual y otras formas de violencia que vulneran su dignidad y desarrollo.",
     links: "Enlaces",
     volunteering: "Voluntariado",
-    transparency: "Transparencia",
     resources: "Recursos",
     privacyPolicy: "Política de Privacidad",
     termsOfUse: "Términos de Uso",
     allRightsReserved: "Todos los derechos reservados.",
+    phone: "+57 321 401 9379",
+    email: "glenys.otero@misionvallado.org",
+    location: "Santander, Colombia",
 
     // Donation Modal
     donationModalTitle: "Hacer una Donación",
@@ -189,6 +236,30 @@ const translations = {
     enterAmount: "Ingresa el monto",
     proceedDonation: "Proceder con la Donación",
     close: "Cerrar",
+
+    // WhatsApp Messages
+    donationMessage: "Hola Misión Vallado, me gustaría hacer una donación para apoyar la protección de niños y niñas del abuso sexual. ¿Podrían brindarme más información sobre cómo puedo contribuir?",
+    bookDonationMessage: "Hola Misión Vallado, me gustaría donar el libro 'El Regalo del Rey' para un niño de bajos recursos. ¿Podrían informarme sobre el proceso de donación del libro?",
+    learnMoreMessage: "Hola Misión Vallado, me gustaría conocer más sobre su trabajo y programas de protección infantil. ¿Podrían brindarme más información sobre sus actividades?",
+
+    // SEO
+    pageTitle: "Misión Vallado - Protegiendo Niños del Abuso Sexual",
+    pageDescription: "Fundación dedicada a proteger niños, niñas y adolescentes del abuso sexual en Colombia",
+    
+    // Alt texts
+    heroAlt: "Hero - Misión Vallado",
+    heroAltWithNumber: "Hero {number} - Misión Vallado",
+    missionImageAlt: "Misión Vallado - Protección Infantil",
+    visionImageAlt: "Misión Vallado - Visión de Futuro",
+    bookImageAlt: "El Regalo del Rey - Misión Vallado",
+    logoAlt: "Misión Vallado",
+    
+    // Hero title parts
+    heroTitlePart1: "Protegemos a los",
+    heroTitlePart2: "niños",
+    heroTitlePart3: "y",
+    heroTitlePart4: "niñas",
+    heroTitlePart5: "del abuso sexual",
   },
   en: {
     // Header
@@ -199,6 +270,8 @@ const translations = {
     donate: "Donate",
     videos: "Videos",
     book: "The King's Gift",
+    organizationName: "Misión Vallado",
+    protectingGeneration: "Protecting a generation",
 
     // Hero
     childProtection: "Who We Are?",
@@ -215,6 +288,29 @@ const translations = {
     workshopsGiven: "Workshops Given",
     yearsExperience: "Years of Experience",
     successRate: "Success Rate",
+
+    // Social Media
+    followUsSocialMedia: "Follow Us on Social Media",
+    joinCommunity: "Join our community and stay informed about our activities and events",
+    youtubeDescription: "Educational videos and testimonials",
+    instagramDescription: "Moments and activities",
+    facebookDescription: "News and events",
+    tiktokDescription: "Short videos and messages",
+
+    // Pillars
+    fundamentalPillars: "Our Fundamental Pillars",
+    missionVisionValues: "Mission, Vision & Values",
+    pillarsDescription: "The foundations that support our unwavering commitment to child protection and building a safer future",
+    mission: "MISSION",
+    vision: "VISION",
+    ourValues: "OUR VALUES",
+    valuesDescription: "The principles that guide each of our actions and decisions, forming the foundation of our commitment to child protection.",
+    passion: "Passion",
+    transparency: "Transparency",
+    respect: "Respect",
+    compassion: "Compassion",
+    commitment: "Commitment",
+    solidarity: "Solidarity",
 
     // About
     ourMission: "Our Pillar",
@@ -268,10 +364,30 @@ const translations = {
       "Only one in ten abused children tells what happened, and often years after the abuse occurred",
       "A minor who has been a victim of sexual abuse may experience eating and sleep disorders throughout their life, as well as low self-esteem, anxiety, depression, psychoactive substance use, risky sexual behaviors, self-harm, and even suicide attempts.",
     ],
+    painConfusion: "Pain and Confusion",
+    painConfusionDesc: "When a child is a victim of sexual abuse, they experience pain, suffering, and confusion, as most of the time they cannot understand what is happening.",
+    closePerpetrators: "85% Close Perpetrators",
+    closePerpetratorsDesc: "The perpetrator in most cases (85%) is someone close to or even part of their family, which contributes to their silence due to fear.",
+    oneInFourGirls: "1 in 4 Girls",
+    oneInFourGirlsDesc: "Worldwide, one in four girls and one in five boys is a victim of sexual abuse.",
+    onlyOneInTen: "Only 1 in 10",
+    onlyOneInTenDesc: "Only one in ten abused children tells what happened, and often years after the abuse occurred.",
+    lifelongConsequences: "Lifelong Consequences",
+    lifelongConsequencesDesc: "A minor who has been a victim of sexual abuse may experience eating disorders, low self-esteem, anxiety, depression, and other problems.",
+    yourHelpMakesDifference: "Your Help Makes a Difference",
+    yourHelpMakesDifferenceDesc: "With your help, we can make a difference in the lives of children. They will learn not to remain silent about what harms them.",
+    joinMissionProtect: "Join our mission to protect childhood",
+    everyActionCounts: "Every action counts, every donation matters, every person can make a difference",
 
     // Videos
     videosTitle: "Our Videos",
     videosDescription: "Learn more about our work through these videos",
+    video1Title: "Child Sexual Abuse Prevention",
+    video1Description: "Educational video about child sexual abuse prevention",
+    video2Title: "Vallado Party",
+    video2Description: "Learn more about our birthday parties with purpose",
+    video3Title: "Overcoming Testimony",
+    video3Description: "Story of hope and transformation",
 
     // Book
     bookTitle: "The King's Gift",
@@ -325,11 +441,13 @@ const translations = {
       "Movement dedicated to the comprehensive protection of children and adolescents against sexual abuse and other forms of violence that violate their dignity and development.",
     links: "Links",
     volunteering: "Volunteering",
-    transparency: "Transparency",
     resources: "Resources",
     privacyPolicy: "Privacy Policy",
     termsOfUse: "Terms of Use",
     allRightsReserved: "All rights reserved.",
+    phone: "+57 321 401 9379",
+    email: "glenys.otero@misionvallado.org",
+    location: "Santander, Colombia",
 
     // Donation Modal
     donationModalTitle: "Make a Donation",
@@ -340,6 +458,30 @@ const translations = {
     enterAmount: "Enter amount",
     proceedDonation: "Proceed with Donation",
     close: "Close",
+
+    // WhatsApp Messages
+    donationMessage: "Hello Misión Vallado, I would like to make a donation to support the protection of children from sexual abuse. Could you provide me with more information about how I can contribute?",
+    bookDonationMessage: "Hello Misión Vallado, I would like to donate the book 'The King's Gift' for a child in need. Could you inform me about the book donation process?",
+    learnMoreMessage: "Hello Misión Vallado, I would like to learn more about your work and child protection programs. Could you provide me with more information about your activities?",
+
+    // SEO
+    pageTitle: "Misión Vallado - Protecting Children from Sexual Abuse",
+    pageDescription: "Foundation dedicated to protecting children and adolescents from sexual abuse in Colombia",
+    
+    // Alt texts
+    heroAlt: "Hero - Misión Vallado",
+    heroAltWithNumber: "Hero {number} - Misión Vallado",
+    missionImageAlt: "Misión Vallado - Child Protection",
+    visionImageAlt: "Misión Vallado - Vision of the Future",
+    bookImageAlt: "The King's Gift - Misión Vallado",
+    logoAlt: "Misión Vallado",
+    
+    // Hero title parts
+    heroTitlePart1: "We protect",
+    heroTitlePart2: "children",
+    heroTitlePart3: "and",
+    heroTitlePart4: "girls",
+    heroTitlePart5: "from sexual abuse",
   },
 };
 
@@ -492,23 +634,17 @@ export default function Component() {
   };
 
   const handleDonationClick = () => {
-    const message = encodeURIComponent(
-      "Hola Misión Vallado, me gustaría hacer una donación para apoyar la protección de niños y niñas del abuso sexual. ¿Podrían brindarme más información sobre cómo puedo contribuir?"
-    );
+    const message = encodeURIComponent(t.donationMessage);
     window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
   };
 
   const handleBookDonationClick = () => {
-    const message = encodeURIComponent(
-      "Hola Misión Vallado, me gustaría donar el libro 'El Regalo del Rey' para un niño de bajos recursos. ¿Podrían informarme sobre el proceso de donación del libro?"
-    );
+    const message = encodeURIComponent(t.bookDonationMessage);
     window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
   };
 
   const handleLearnMoreClick = () => {
-    const message = encodeURIComponent(
-      "Hola Misión Vallado, me gustaría conocer más sobre su trabajo y programas de protección infantil. ¿Podrían brindarme más información sobre sus actividades?"
-    );
+    const message = encodeURIComponent(t.learnMoreMessage);
     window.open(`https://wa.me/573214019379?text=${message}`, "_blank");
   };
 
@@ -548,19 +684,18 @@ export default function Component() {
   const youtubeVideos = [
     {
       id: "BDiiEmp6_70",
-      title: "Prevención de Abuso Sexual Infantil",
-      description: "Video educativo sobre prevención de abuso sexual infantil",
+      title: t.video1Title,
+      description: t.video1Description,
     },
     {
       id: "TrgW7OtxJBs",
-      title: "Vallado Party",
-      description:
-        "Conoce más sobre nuestras fiestas de cumpleaños con propósito",
+      title: t.video2Title,
+      description: t.video2Description,
     },
     {
       id: "TyVqCY1nE_0",
-      title: "Testimonio de Superación",
-      description: "Historia de esperanza y transformación",
+      title: t.video3Title,
+      description: t.video3Description,
     },
   ];
 
@@ -569,19 +704,8 @@ export default function Component() {
       <div className="flex flex-col min-h-screen bg-white">
         {/* SEO Meta Tags would go in head */}
         <head>
-          <title>
-            {language === "es"
-              ? "Misión Vallado - Protegiendo Niños del Abuso Sexual"
-              : "Misión Vallado - Protecting Children from Sexual Abuse"}
-          </title>
-          <meta
-            name="description"
-            content={
-              language === "es"
-                ? "Fundación dedicada a proteger niños, niñas y adolescentes del abuso sexual en Colombia"
-                : "Foundation dedicated to protecting children and adolescents from sexual abuse in Colombia"
-            }
-          />
+          <title>{t.pageTitle}</title>
+          <meta name="description" content={t.pageDescription} />
           <link rel="alternate" hrefLang="es" href="/es" />
           <link rel="alternate" hrefLang="en" href="/en" />
           <link rel="canonical" href={`/${language}`} />
@@ -607,7 +731,7 @@ export default function Component() {
                   Misión Vallado
                 </span>
                 <span className="text-xs text-gray-500 hidden sm:block">
-                  Protegiendo a una generación
+                  {t.protectingGeneration}
                 </span>
               </div>
             </Link>
@@ -783,22 +907,23 @@ export default function Component() {
                     </Badge>
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                       <span className="text-gray-900">
-                        {language === "es" ? "Protegemos a los" : "We protect"}
+                        {t.heroTitlePart1}
                       </span>{" "}
                       {language === "es" ? (
                         <>
-                          <span className="text-red-500">niños </span>
-                          <span className="text-gray-900">y</span>{" "}
-                          <span className="text-red-500">niñas</span>{" "}
+                          <span className="text-red-500">{t.heroTitlePart2} </span>
+                          <span className="text-gray-900">{t.heroTitlePart3}</span>{" "}
+                          <span className="text-red-500">{t.heroTitlePart4}</span>{" "}
+                          <span className="text-gray-900">{t.heroTitlePart5}</span>
                         </>
                       ) : (
-                        <span className="text-red-500">children</span>
-                      )}{" "}
-                      <span className="text-gray-900">
-                        {language === "es"
-                          ? "del abuso sexual"
-                          : "from sexual abuse"}
-                      </span>
+                        <>
+                          <span className="text-red-500">{t.heroTitlePart2}</span>{" "}
+                          <span className="text-gray-900">{t.heroTitlePart3}</span>{" "}
+                          <span className="text-red-500">{t.heroTitlePart4}</span>{" "}
+                          <span className="text-gray-900">{t.heroTitlePart5}</span>
+                        </>
+                      )}
                     </h1>
                     <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
                       {t.heroDescription}
@@ -858,7 +983,7 @@ export default function Component() {
                         <Image
                           src={heroImages[0]}
                           fill
-                          alt="Hero - Misión Vallado"
+                          alt={t.heroAlt}
                           className="rounded-2xl shadow-2xl object-cover w-full h-full"
                           sizes="(max-width: 320px) 280px, (max-width: 640px) 300px, (max-width: 768px) 500px, 600px"
                           priority
@@ -877,7 +1002,7 @@ export default function Component() {
                           <Image
                             src={src}
                             fill
-                            alt={`Hero ${index + 1} - Misión Vallado`}
+                            alt={t.heroAltWithNumber.replace("{number}", (index + 1).toString())}
                             className="rounded-2xl shadow-2xl object-cover w-full h-full"
                             sizes="(max-width: 320px) 280px, (max-width: 640px) 300px, (max-width: 768px) 500px, 600px"
                             priority={index === 0}
@@ -898,14 +1023,10 @@ export default function Component() {
             <div className="container px-4 mx-auto">
               <div className="max-w-3xl mx-auto text-center mb-16">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  {language === "es"
-                    ? "Síguenos en Redes Sociales"
-                    : "Follow Us on Social Media"}
+                  {t.followUsSocialMedia}
                 </h2>
                 <p className="text-lg text-gray-600">
-                  {language === "es"
-                    ? "Únete a nuestra comunidad y mantente informado sobre nuestras actividades y eventos"
-                    : "Join our community and stay informed about our activities and events"}
+                  {t.joinCommunity}
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -922,9 +1043,7 @@ export default function Component() {
                     YouTube
                   </h3>
                   <p className="text-sm text-gray-600 text-center">
-                    {language === "es"
-                      ? "Videos educativos y testimonios"
-                      : "Educational videos and testimonials"}
+                    {t.youtubeDescription}
                   </p>
                 </Link>
 
@@ -941,9 +1060,7 @@ export default function Component() {
                     Instagram
                   </h3>
                   <p className="text-sm text-gray-600 text-center">
-                    {language === "es"
-                      ? "Momentos y actividades"
-                      : "Moments and activities"}
+                    {t.instagramDescription}
                   </p>
                 </Link>
 
@@ -960,9 +1077,7 @@ export default function Component() {
                     Facebook
                   </h3>
                   <p className="text-sm text-gray-600 text-center">
-                    {language === "es"
-                      ? "Noticias y eventos"
-                      : "News and events"}
+                    {t.facebookDescription}
                   </p>
                 </Link>
 
@@ -979,9 +1094,7 @@ export default function Component() {
                     TikTok
                   </h3>
                   <p className="text-sm text-gray-600 text-center">
-                    {language === "es"
-                      ? "Videos cortos y mensajes"
-                      : "Short videos and messages"}
+                    {t.tiktokDescription}
                   </p>
                 </Link>
               </div>
@@ -997,25 +1110,13 @@ export default function Component() {
                   className="mb-6 border-red-200 text-red-600 px-4 py-2"
                 >
                   <Heart className="w-4 h-4 mr-2" />
-                  {language === "es"
-                    ? "Nuestros Pilares Fundamentales"
-                    : "Our Fundamental Pillars"}
+                  {t.fundamentalPillars}
                 </Badge>
                 <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                  {language === "es" ? (
-                    <>
-                      <span>Misión, Visión y Valores</span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="block">Mission, Vision & Values</span>
-                    </>
-                  )}
+                  {t.missionVisionValues}
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                  {language === "es"
-                    ? "Los cimientos que sostienen nuestro compromiso inquebrantable con la protección de la infancia y la construcción de un futuro más seguro"
-                    : "The foundations that support our unwavering commitment to child protection and building a safer future"}
+                  {t.pillarsDescription}
                 </p>
               </div>
 
@@ -1029,22 +1130,18 @@ export default function Component() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        MISIÓN
+                        {t.mission}
                       </h3>
                       <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
                     </div>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Protegemos a niños y niñas del abuso sexual, educando
-                    y movilizando a padres, cuidadores, comunidades y
-                    actores sociales, promoviendo la prevención, detección
-                    temprana y atención integral para su desarrollo
-                    seguro.
+                    {t.missionDescription}
                   </p>
-                  <div className="w-full h-48 rounded-2xl overflow-hidden shadow-lg">
+                  <div className="w-full h-58 rounded-2xl overflow-hidden shadow-lg">
                     <Image
                       src="/MISION_1.jpeg"
-                      alt="Misión Vallado - Protección Infantil"
+                      alt={t.missionImageAlt}
                       width={400}
                       height={200}
                       className="w-full h-full object-cover"
@@ -1060,20 +1157,18 @@ export default function Component() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        VISIÓN
+                        {t.vision}
                       </h3>
                       <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
                     </div>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed md:mb-13">
-                    Un mundo donde los niños y niñas tengan una infancia
-                    feliz, sin traumas, ni secuelas que les impidan
-                    desarrollar todo su potencial y alcanzar sus sueños.
+                    {t.visionDescription}
                   </p>
-                  <div className="w-full h-48 rounded-2xl overflow-hidden shadow-lg">
+                  <div className="w-full h-58 rounded-2xl overflow-hidden shadow-lg">
                     <Image
                       src="/MISION_2.jpeg"
-                      alt="Misión Vallado - Visión de Futuro"
+                      alt={t.visionImageAlt}
                       width={400}
                       height={200}
                       className="w-full h-full object-cover"
@@ -1090,23 +1185,22 @@ export default function Component() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      NUESTROS VALORES
+                      {t.ourValues}
                     </h3>
                     <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
                   </div>
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
-                  Los principios que guían cada una de nuestras acciones y decisiones, 
-                  formando la base de nuestro compromiso con la protección infantil.
+                  {t.valuesDescription}
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                   {[
-                    "Pasión",
-                    "Transparencia", 
-                    "Respeto",
-                    "Compasión",
-                    "Compromiso",
-                    "Solidaridad",
+                    t.passion,
+                    t.transparency,
+                    t.respect,
+                    t.compassion,
+                    t.commitment,
+                    t.solidarity,
                   ].map((valor, idx) => (
                     <div
                       key={idx}
@@ -1123,7 +1217,7 @@ export default function Component() {
           {/* Why We Do It Section */}
           <section id="why-we-do-it" className="py-20 bg-gray-50">
             <div className="container px-4 mx-auto">
-              <div className="max-w-3xl mx-auto text-center mb-16">
+              <div className="max-w-4xl mx-auto text-center mb-16">
                 <Badge
                   variant="outline"
                   className="mb-4 border-red-200 text-red-600"
@@ -1133,22 +1227,101 @@ export default function Component() {
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">
                   {t.whyWeDoItTitle}
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
                   {t.whyWeDoItDescription}
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {t.whyWeDoItStats.map((stat, index) => (
-                  <Card key={index} className="border-0 shadow-lg">
-                    <CardContent className="p-8">
-                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                        <Shield className="h-6 w-6 text-red-500" />
-                      </div>
-                      <p className="text-gray-600 leading-relaxed">{stat}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                {/* Estadística 1 */}
+                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Shield className="h-8 w-8 text-red-500" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                      {t.painConfusion}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t.painConfusionDesc}
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Estadística 2 */}
+                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="h-8 w-8 text-red-500" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                      {t.closePerpetrators}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t.closePerpetratorsDesc}
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Estadística 3 */}
+                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <TrendingUp className="h-8 w-8 text-red-500" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                      {t.oneInFourGirls}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t.oneInFourGirlsDesc}
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Estadística 4 */}
+                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <MessageCircle className="h-8 w-8 text-red-500" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                      {t.onlyOneInTen}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t.onlyOneInTenDesc}
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Estadística 5 */}
+                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Heart className="h-8 w-8 text-red-500" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                      {t.lifelongConsequences}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t.lifelongConsequencesDesc}
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Estadística 6 */}
+                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Award className="h-8 w-8 text-red-500" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                      {t.yourHelpMakesDifference}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t.yourHelpMakesDifferenceDesc}
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
@@ -1157,14 +1330,10 @@ export default function Component() {
               <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
                 <div className="relative z-10">
                   <h4 className="text-2xl md:text-3xl font-bold mb-4">
-                    {language === "es"
-                      ? "Únete a nuestra misión de proteger la infancia"
-                      : "Join our mission to protect childhood"}
+                    {t.joinMissionProtect}
                   </h4>
                   <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
-                    {language === "es"
-                      ? "Cada acción cuenta, cada donación importa, cada persona puede hacer la diferencia"
-                      : "Every action counts, every donation matters, every person can make a difference"}
+                    {t.everyActionCounts}
                   </p>
                   <Button
                     size="lg"
@@ -1172,9 +1341,7 @@ export default function Component() {
                     onClick={handleDonationClick}
                   >
                     <Heart className="mr-2 h-5 w-5" />
-                    {language === "es"
-                      ? "Hacer una Donación"
-                      : "Make a Donation"}
+                    {t.makeDonation}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -1451,7 +1618,7 @@ export default function Component() {
                     src="/book.png"
                     width="600"
                     height="800"
-                    alt="El Regalo del Rey - Misión Vallado"
+                    alt={t.bookImageAlt}
                     className="rounded-2xl shadow-xl"
                   />
                 </div>
@@ -1480,7 +1647,7 @@ export default function Component() {
 
               <div className="flex justify-center">
                 <ul
-                  className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8 gap-y-4 mx-auto px-8"
+                  className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-20 gap-y-8 mx-auto px-8"
                   style={{ listStyle: "none" }}
                 >
                   {t.supportWays.map((way, index) => (
@@ -1622,7 +1789,7 @@ export default function Component() {
                 <div className="flex items-center space-x-3 mb-4">
                   <Image
                     src="/mision_vallado_logo.png"
-                    alt="Misión Vallado"
+                    alt={t.logoAlt}
                     width={50}
                     height={50}
                     className="rounded-full"
@@ -1632,7 +1799,7 @@ export default function Component() {
                   <div>
                     <div className="text-xl font-bold">Misión Vallado</div>
                     <div className="text-sm text-gray-400">
-                      Protegiendo a una generación
+                      {t.protectingGeneration}
                     </div>
                   </div>
                 </div>
@@ -1680,17 +1847,15 @@ export default function Component() {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Phone className="h-4 w-4 text-red-400" />
-                    <span className="text-gray-300">+57 321 401 9379</span>
+                    <span className="text-gray-300">{t.phone}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="h-4 w-4 text-red-400" />
-                    <span className="text-gray-300">
-                      glenys.otero@misionvallado.org
-                    </span>
+                    <span className="text-gray-300">{t.email}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-4 w-4 text-red-400" />
-                    <span className="text-gray-300">Santander, Colombia</span>
+                    <span className="text-gray-300">{t.location}</span>
                   </div>
                 </div>
               </div>
