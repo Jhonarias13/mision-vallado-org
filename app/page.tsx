@@ -31,7 +31,6 @@ import {
   Facebook,
   MessageCircle,
   Video,
-  AlertCircle,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -526,11 +525,11 @@ export default function Component() {
     trainedAdults: 0,
     recoveryRate: 0,
   });
-  const [showEmailModal, setShowEmailModal] = useState(false);
-  const [modalType, setModalType] = useState<
-    "donation" | "learnMore" | "bookDonation"
-  >("donation");
-  const [countdown, setCountdown] = useState(5);
+  // const [showEmailModal, setShowEmailModal] = useState(false);
+  // const [modalType, setModalType] = useState<
+  //   "donation" | "learnMore" | "bookDonation"
+  // >("donation");
+  // const [countdown, setCountdown] = useState(5);
 
   const programImages = [
     "/imagen9.jpeg", // Formación Vallado - Imagen de programa general
@@ -666,95 +665,96 @@ export default function Component() {
     return num.toLocaleString();
   };
 
+  const whatsappNumber = "573214019379"; // Número de WhatsApp en formato internacional
+
   const handleDonationClick = () => {
-    setModalType("donation");
-    setShowEmailModal(true);
+    const message = encodeURIComponent(t.donationMessage);
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };
 
   const handleBookDonationClick = () => {
-    setModalType("bookDonation");
-    setShowEmailModal(true);
+    const message = encodeURIComponent(t.bookDonationMessage);
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };
 
   const handleLearnMoreClick = () => {
-    setModalType("learnMore");
-    setShowEmailModal(true);
+    window.open("https://www.youtube.com/@misionvallado6894", "_blank");
   };
 
-  const handleModalCancel = () => {
-    setShowEmailModal(false);
-    setCountdown(5);
-  };
+  // const handleModalCancel = () => {
+  //   setShowEmailModal(false);
+  //   setCountdown(5);
+  // };
 
   // Countdown effect
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
+  // useEffect(() => {
+  //   let interval: NodeJS.Timeout;
 
-    if (showEmailModal && countdown > 0) {
-      interval = setInterval(() => {
-        setCountdown((prev) => {
-          if (prev <= 1) {
-            // Auto redirect when countdown reaches 0
-            const handleAutoRedirect = () => {
-              setShowEmailModal(false);
+  //   if (showEmailModal && countdown > 0) {
+  //     interval = setInterval(() => {
+  //       setCountdown((prev) => {
+  //         if (prev <= 1) {
+  //           // Auto redirect when countdown reaches 0
+  //           const handleAutoRedirect = () => {
+  //             setShowEmailModal(false);
 
-              let subject = "";
-              let body = "";
+  //             let subject = "";
+  //             let body = "";
 
-              switch (modalType) {
-                case "donation":
-                  subject = encodeURIComponent("Donación - Misión Vallado");
-                  body = encodeURIComponent(t.donationMessage);
-                  break;
-                case "bookDonation":
-                  subject = encodeURIComponent(
-                    "Donación de Libro - El Regalo del Rey"
-                  );
-                  body = encodeURIComponent(t.bookDonationMessage);
-                  break;
-                case "learnMore":
-                  subject = encodeURIComponent(
-                    "Información sobre Misión Vallado"
-                  );
-                  body = encodeURIComponent(t.learnMoreMessage);
-                  break;
-              }
+  //             switch (modalType) {
+  //               case "donation":
+  //                 subject = encodeURIComponent("Donación - Misión Vallado");
+  //                 body = encodeURIComponent(t.donationMessage);
+  //                 break;
+  //               case "bookDonation":
+  //                 subject = encodeURIComponent(
+  //                   "Donación de Libro - El Regalo del Rey"
+  //                 );
+  //                 body = encodeURIComponent(t.bookDonationMessage);
+  //                 break;
+  //               case "learnMore":
+  //                 subject = encodeURIComponent(
+  //                   "Información sobre Misión Vallado"
+  //                 );
+  //                 body = encodeURIComponent(t.learnMoreMessage);
+  //                 break;
+  //             }
 
-              window.open(
-                `mailto:${t.email}?subject=${subject}&body=${body}`,
-                "_blank"
-              );
-            };
+  //             window.open(
+  //               `mailto:${t.email}?subject=${subject}&body=${body}`,
+  //               "_blank"
+  //             );
+  //           };
 
-            handleAutoRedirect();
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-    }
+  //           handleAutoRedirect();
+  //           return 0;
+  //         }
+  //         return prev - 1;
+  //       });
+  //     }, 1000);
+  //   }
 
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  }, [
-    showEmailModal,
-    countdown,
-    modalType,
-    t.donationMessage,
-    t.bookDonationMessage,
-    t.learnMoreMessage,
-    t.email,
-  ]);
+  //   return () => {
+  //     if (interval) {
+  //       clearInterval(interval);
+  //     }
+  //   };
+  // }, [
+  //   showEmailModal,
+  //   countdown,
+  //   modalType,
+  //   t.donationMessage,
+  //   t.bookDonationMessage,
+  //   t.learnMoreMessage,
+  //   t.email,
+  // ]);
 
-  // Reset countdown when modal opens
-  useEffect(() => {
-    if (showEmailModal) {
-      setCountdown(5);
-    }
-  }, [showEmailModal]);
+  // // Reset countdown when modal opens
+  // useEffect(() => {
+  //   if (showEmailModal) {
+  //     setCountdown(5);
+  //   }
+  // }, [showEmailModal]);
 
   const youtubeVideos = [
     {
@@ -2004,81 +2004,6 @@ export default function Component() {
           </div>
         </footer>
       </div>
-
-      {/* Email Modal */}
-      {showEmailModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 mx-4">
-            {/* Close button */}
-            <button
-              onClick={handleModalCancel}
-              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Modal content */}
-            <div className="text-center space-y-4">
-              {/* Icon */}
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
-                <Mail className="w-8 h-8 text-red-500" />
-              </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold text-gray-900">
-                {modalType === "donation" &&
-                  (language === "es"
-                    ? "Redirigiendo a Email"
-                    : "Redirecting to Email")}
-                {modalType === "bookDonation" &&
-                  (language === "es" ? "Donación de Libro" : "Book Donation")}
-                {modalType === "learnMore" &&
-                  (language === "es" ? "Más Información" : "More Information")}
-              </h3>
-
-              {/* Countdown Timer */}
-              <div className="flex items-center justify-center space-x-2">
-                <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">
-                    {countdown}
-                  </span>
-                </div>
-                <span className="text-gray-600 font-medium">
-                  {language === "es" ? "segundos" : "seconds"}
-                </span>
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-600 leading-relaxed">
-                {language === "es"
-                  ? "Serás redirigido automáticamente a tu aplicación de email predeterminada."
-                  : "You will be automatically redirected to your default email application."}
-              </p>
-
-              {/* Alert */}
-              <div className="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                <AlertCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-blue-700 text-left">
-                  {language === "es"
-                    ? "Si no tienes configurada una aplicación de email, se abrirá tu navegador web."
-                    : "If you don't have an email application configured, your web browser will open."}
-                </p>
-              </div>
-
-              {/* Cancel Button */}
-              <div className="pt-4">
-                <Button
-                  onClick={handleModalCancel}
-                  variant="outline"
-                  className="w-full border-gray-300 hover:bg-gray-50"
-                >
-                  {language === "es" ? "Cancelar" : "Cancel"}
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
