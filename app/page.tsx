@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 // Translations
 const translations = {
@@ -545,11 +546,7 @@ export default function Component() {
     trainedAdults: 0,
     recoveryRate: 0,
   });
-  // const [showEmailModal, setShowEmailModal] = useState(false);
-  // const [modalType, setModalType] = useState<
-  //   "donation" | "learnMore" | "bookDonation"
-  // >("donation");
-  // const [countdown, setCountdown] = useState(5);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true);
 
   const programImages = [
     "/imagen9.jpeg", // Formación Vallado - Imagen de programa general
@@ -701,80 +698,23 @@ export default function Component() {
     window.open("https://www.youtube.com/@misionvallado6894", "_blank");
   };
 
-  // const handleModalCancel = () => {
-  //   setShowEmailModal(false);
-  //   setCountdown(5);
-  // };
-
-  // Countdown effect
-  // useEffect(() => {
-  //   let interval: NodeJS.Timeout;
-
-  //   if (showEmailModal && countdown > 0) {
-  //     interval = setInterval(() => {
-  //       setCountdown((prev) => {
-  //         if (prev <= 1) {
-  //           // Auto redirect when countdown reaches 0
-  //           const handleAutoRedirect = () => {
-  //             setShowEmailModal(false);
-
-  //             let subject = "";
-  //             let body = "";
-
-  //             switch (modalType) {
-  //               case "donation":
-  //                 subject = encodeURIComponent("Donación - Misión Vallado");
-  //                 body = encodeURIComponent(t.donationMessage);
-  //                 break;
-  //               case "bookDonation":
-  //                 subject = encodeURIComponent(
-  //                   "Donación de Libro - El Regalo del Rey"
-  //                 );
-  //                 body = encodeURIComponent(t.bookDonationMessage);
-  //                 break;
-  //               case "learnMore":
-  //                 subject = encodeURIComponent(
-  //                   "Información sobre Misión Vallado"
-  //                 );
-  //                 body = encodeURIComponent(t.learnMoreMessage);
-  //                 break;
-  //             }
-
-  //             window.open(
-  //               `mailto:${t.email}?subject=${subject}&body=${body}`,
-  //               "_blank"
-  //             );
-  //           };
-
-  //           handleAutoRedirect();
-  //           return 0;
-  //         }
-  //         return prev - 1;
-  //       });
-  //     }, 1000);
-  //   }
-
-  //   return () => {
-  //     if (interval) {
-  //       clearInterval(interval);
-  //     }
-  //   };
-  // }, [
-  //   showEmailModal,
-  //   countdown,
-  //   modalType,
-  //   t.donationMessage,
-  //   t.bookDonationMessage,
-  //   t.learnMoreMessage,
-  //   t.email,
-  // ]);
-
-  // // Reset countdown when modal opens
-  // useEffect(() => {
-  //   if (showEmailModal) {
-  //     setCountdown(5);
-  //   }
-  // }, [showEmailModal]);
+  // WhatsApp links para donar y comprar libro
+  const handleDonateBook = () => {
+    const message = encodeURIComponent(
+      language === "es"
+        ? "Hola, quiero donar el libro 'El regalo del Rey' a un niño de bajos recursos. ¿Me pueden dar más información?"
+        : "Hi, I want to donate the book 'The King's Gift' to a child in need. Can you give me more information?"
+    );
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+  };
+  const handleBuyBook = () => {
+    const message = encodeURIComponent(
+      language === "es"
+        ? "Hola, quiero comprar el libro 'El regalo del Rey'. ¿Me pueden dar más información?"
+        : "Hi, I want to buy the book 'The King's Gift'. Can you give me more information?"
+    );
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+  };
 
   const youtubeVideos = [
     {
@@ -796,6 +736,57 @@ export default function Component() {
 
   return (
     <>
+      {/* Modal de bienvenida */}
+      <Dialog open={showWelcomeModal} onOpenChange={setShowWelcomeModal}>
+        <DialogContent className="w-[95vw] md:min-w-4xl p-0 md:overflow-hidden overflow-scroll flex flex-col lg:flex-row max-h-[90vh] lg:max-h-[600px]">
+          <DialogTitle className="sr-only">
+            {language === "es"
+              ? "¡Regala una historia que salva vidas!"
+              : "Give a story that saves lives!"}
+          </DialogTitle>
+          {/* Lado izquierdo: texto */}
+          <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center bg-white order-2 lg:order-1">
+            <h2 className="text-xl lg:text-2xl font-bold mb-3 lg:mb-4 text-gray-900">
+              {language === "es"
+                ? "¡Regala una historia que salva vidas!"
+                : "Give a story that saves lives!"}
+            </h2>
+            <p className="text-base lg:text-lg font-semibold text-red-600 mb-2">
+              {language === "es"
+                ? '"El regalo del Rey"'
+                : '"The King\'s Gift"'}
+            </p>
+            <p className="text-sm lg:text-base text-gray-700 mb-3 lg:mb-4 leading-relaxed">
+              {language === "es"
+                ? "es una historia educativa que fomenta la valentía y la confianza. A través de su protagonista, los niños aprenderán a reconocer y prevenir el abuso sexual.\nIncluye un instructivo especial para padres."
+                : "is an educational story that fosters courage and confidence. Through its protagonist, children will learn to recognize and prevent sexual abuse.\nIncludes a special guide for parents."}
+            </p>
+            <p className="font-semibold text-gray-900 mb-4 lg:mb-6 text-sm lg:text-base">
+              {language === "es"
+                ? "Dona un libro a un niño de bajos recursos"
+                : "Donate a book to a child in need"}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
+              <Button className="bg-red-500 hover:bg-red-600 text-white font-bold text-sm lg:text-base py-2 lg:py-3" onClick={handleDonateBook}>
+                {language === "es" ? "Donar" : "Donate"}
+              </Button>
+              <Button variant="outline" className="font-bold text-sm lg:text-base py-2 lg:py-3" onClick={handleBuyBook}>
+                {language === "es" ? "Comprar" : "Buy"}
+              </Button>
+            </div>
+          </div>
+          {/* Lado derecho: imagen */}
+          <div className="flex-1 bg-gray-50 relative h-48 lg:h-auto order-1 lg:order-2">
+            <Image
+              src="/book2.png"
+              alt={language === "es" ? "El regalo del Rey" : "The King's Gift"}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
       <div className="flex flex-col min-h-screen bg-white">
         {/* SEO Meta Tags would go in head */}
         <head>
@@ -1164,7 +1155,7 @@ export default function Component() {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {t.painConfusion}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm opacity-90">
+                    <p className="text-white leading-relaxed text-lg opacity-90">
                       {t.painConfusionDesc}
                     </p>
                   </CardContent>
@@ -1179,7 +1170,7 @@ export default function Component() {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {t.closePerpetrators}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm opacity-90">
+                    <p className="text-white leading-relaxed text-lg opacity-90">
                       {t.closePerpetratorsDesc}
                     </p>
                   </CardContent>
@@ -1194,7 +1185,7 @@ export default function Component() {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {t.oneInFourGirls}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm opacity-90">
+                    <p className="text-white leading-relaxed text-lg opacity-90">
                       {t.oneInFourGirlsDesc}
                     </p>
                   </CardContent>
@@ -1209,7 +1200,7 @@ export default function Component() {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {t.onlyOneInTen}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm opacity-90">
+                    <p className="text-white leading-relaxed text-lg opacity-90">
                       {t.onlyOneInTenDesc}
                     </p>
                   </CardContent>
@@ -1224,7 +1215,7 @@ export default function Component() {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {t.lifelongConsequences}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm opacity-90">
+                    <p className="text-white leading-relaxed text-lg opacity-90">
                       {t.lifelongConsequencesDesc}
                     </p>
                   </CardContent>
@@ -1239,7 +1230,7 @@ export default function Component() {
                     <h3 className="text-lg font-bold text-white mb-3">
                       {t.yourHelpMakesDifference}
                     </h3>
-                    <p className="text-white leading-relaxed text-sm opacity-90">
+                    <p className="text-white leading-relaxed text-lg opacity-90">
                       {t.yourHelpMakesDifferenceDesc}
                     </p>
                   </CardContent>
@@ -1516,7 +1507,7 @@ export default function Component() {
 
                 <div className="relative">
                   <Image
-                    src="/book.png"
+                    src="/book.jpeg"
                     width="600"
                     height="800"
                     alt={t.bookImageAlt}
