@@ -1001,7 +1001,7 @@ export default function Component() {
                       {t.childProtection}
                     </Badge>
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                      <span className="text-gray-900 text-4xl">{t.heroTitlePart1}</span>
+                      <span className="text-gray-900 text-2xl sm:text-3xl md:text-4xl">{t.heroTitlePart1}</span>
                       <br />
                       {language === "es" ? (
                         <>
