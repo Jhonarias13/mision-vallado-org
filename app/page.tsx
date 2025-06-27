@@ -53,7 +53,7 @@ const translations = {
     childProtection: "¿Quiénes somos?",
     heroTitle: "Protegemos a los niños y niñas del abuso sexual",
     heroDescription:
-      "Somos una Entidad sin Ánimo de Lucro, basada en principios cristianos, que promueve una cultura de cuidado y protección a la niñez, para resguardarlos del abuso sexual. Trabajamos enseñando a los padres cómo minimizar los riesgos y empoderando a los menores para que puedan identificar estas amenazas y denunciarlas a tiempo.",
+      "Educando y movilizando a padres, cuidadores, comunidades y actores sociales, promoviendo la prevención, detección temprana y atención integral para su desarrollo seguro.",
     makeDonation: "Hacer una Donación",
     learnMore: "Conocer Nuestro Trabajo",
     childrenProtected: "+2.109 niños protegidos",
@@ -104,7 +104,7 @@ const translations = {
       "Implementamos programas educativos innovadores para prevenir el abuso sexual y crear entornos protectores en hogares, escuelas y comunidades.",
     protection: "Protección",
     protectionDesc:
-      "Ofrecemos apoyo integral especializado: legal, psicológico y social a niños, niñas y adolescentes que han sido víctimas de abuso sexual.",
+      "Ofrecemos apoyo integral especializado: legal, psicológico y social a niños y niñas que han sido víctimas de abuso sexual.",
     education: "Educación",
     educationDesc:
       "Capacitamos a padres, educadores y cuidadores para identificar señales de alerta y actuar efectivamente ante situaciones de riesgo.",
@@ -188,6 +188,7 @@ const translations = {
       "Incluye un instructivo para padres",
       "Escrito por nuestra fundadora y presidenta, Glenys Otero",
     ],
+    bookFeaturesTitle: "Características:",
     donateBook: "Donar un libro",
 
     // Support
@@ -207,7 +208,7 @@ const translations = {
     // Donation CTA
     donationTitle: "Tu donación salva vidas infantiles",
     donationDescription:
-      "Con tu apoyo podemos seguir protegiendo a más niños, niñas y adolescentes del abuso sexual. Cada contribución, sin importar el monto, se convierte en protección real y esperanza renovada.",
+      "Con tu apoyo podemos seguir protegiendo a más niños y niñas del abuso sexual. Cada contribución, sin importar el monto, se convierte en protección real y esperanza renovada.",
     otherAmount: "Otro Monto",
     secureDonation: "Donación 100% segura",
     taxDeductible: "Deducible de impuestos",
@@ -227,7 +228,7 @@ const translations = {
 
     // Footer
     footerDescription:
-      "Movimiento dedicado a la protección integral de niños, niñas y adolescentes contra el abuso sexual y otras formas de violencia que vulneran su dignidad y desarrollo.",
+      "Somos una Entidad sin Ánimo de Lucro, basada en principios cristianos, que promueve una cultura de cuidado y protección a la niñez, para resguardarlos del abuso sexual. Trabajamos enseñando a los padres cómo minimizar los riesgos y empoderando a los menores para que puedan identificar estas amenazas y denunciarlas a tiempo. ",
     links: "Enlaces",
     volunteering: "Voluntariado",
     resources: "Recursos",
@@ -268,13 +269,22 @@ const translations = {
     visionImageAlt: "Misión Vallado - Visión de Futuro",
     bookImageAlt: "El Regalo del Rey - Misión Vallado",
     logoAlt: "Misión Vallado",
+    programImageAlt: "Programa {number} - Misión Vallado",
+
+    // Social Media Names
+    youtubeName: "YouTube",
+    instagramName: "Instagram",
+    facebookName: "Facebook",
+    tiktokName: "TikTok",
 
     // Hero title parts
-    heroTitlePart1: "Protegemos a los",
-    heroTitlePart2: "niños",
-    heroTitlePart3: "y",
-    heroTitlePart4: "niñas",
-    heroTitlePart5: "del abuso sexual",
+    heroTitlePart1: "Nuestra Misión",
+    heroTitlePart2: "PROTEGEMOS A",
+    heroTitlePart3: "NIÑOS",
+    heroTitlePart4: "Y",
+    heroTitlePart5: "NIÑAS",
+    heroTitlePart6: "DEL",
+    heroTitlePart7: "ABUSO SEXUAL",
   },
   en: {
     // Header
@@ -343,7 +353,7 @@ const translations = {
       "We implement innovative educational programs to prevent sexual abuse and create protective environments in homes, schools and communities.",
     protection: "Protection",
     protectionDesc:
-      "We offer comprehensive specialized support: legal, psychological and social to children and adolescents who have been victims of sexual abuse.",
+      "We offer comprehensive specialized support: legal, psychological and social to children and girls who have been victims of sexual abuse.",
     education: "Education",
     educationDesc:
       "We train parents, educators and caregivers to identify warning signs and act effectively in risk situations.",
@@ -424,6 +434,7 @@ const translations = {
       "Includes a guide for parents",
       "Written by our founder and president, Glenys Otero",
     ],
+    bookFeaturesTitle: "Features:",
     donateBook: "Donate a book",
 
     // Support
@@ -443,7 +454,7 @@ const translations = {
     // Donation CTA
     donationTitle: "Your donation saves children's lives",
     donationDescription:
-      "With your support we can continue protecting more children and adolescents from sexual abuse. Every contribution, regardless of the amount, becomes real protection and renewed hope.",
+      "With your support we can continue protecting more children and girls from sexual abuse. Every contribution, regardless of the amount, becomes real protection and renewed hope.",
     otherAmount: "Other Amount",
     secureDonation: "100% secure donation",
     taxDeductible: "Tax deductible",
@@ -463,7 +474,7 @@ const translations = {
 
     // Footer
     footerDescription:
-      "Movement dedicated to the comprehensive protection of children and adolescents against sexual abuse and other forms of violence that violate their dignity and development.",
+      "Movement dedicated to the comprehensive protection of children and girls against sexual abuse and other forms of violence that violate their dignity and development.",
     links: "Links",
     volunteering: "Volunteering",
     resources: "Resources",
@@ -495,7 +506,7 @@ const translations = {
     // SEO
     pageTitle: "Misión Vallado - Protecting Children from Sexual Abuse",
     pageDescription:
-      "Foundation dedicated to protecting children and adolescents from sexual abuse in Colombia",
+      "Foundation dedicated to protecting children and girls from sexual abuse in Colombia",
 
     // Alt texts
     heroAlt: "Hero - Misión Vallado",
@@ -504,13 +515,22 @@ const translations = {
     visionImageAlt: "Misión Vallado - Vision of the Future",
     bookImageAlt: "The King's Gift - Misión Vallado",
     logoAlt: "Misión Vallado",
+    programImageAlt: "Program {number} - Misión Vallado",
 
-    // Hero title parts
-    heroTitlePart1: "We protect",
-    heroTitlePart2: "children",
-    heroTitlePart3: "and",
-    heroTitlePart4: "girls",
-    heroTitlePart5: "from sexual abuse",
+    // Social Media Names
+    youtubeName: "YouTube",
+    instagramName: "Instagram",
+    facebookName: "Facebook",
+    tiktokName: "TikTok",
+
+    // Hero title parts - Corregido para que coincida con la estructura en español
+    heroTitlePart1: "Our Mission",
+    heroTitlePart2: "WE PROTECT",
+    heroTitlePart3: "CHILDREN",
+    heroTitlePart4: "AND",
+    heroTitlePart5: "GIRLS",
+    heroTitlePart6: "FROM",
+    heroTitlePart7: "SEXUAL ABUSE",
   },
 };
 
@@ -981,20 +1001,27 @@ export default function Component() {
                       {t.childProtection}
                     </Badge>
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                      <span className="text-gray-900">{t.heroTitlePart1}</span>{" "}
+                      <span className="text-gray-900 text-4xl">{t.heroTitlePart1}</span>
+                      <br />
                       {language === "es" ? (
                         <>
-                          <span className="text-red-500">
+                          <span className="text-gray-900">
                             {t.heroTitlePart2}{" "}
                           </span>
-                          <span className="text-gray-900">
+                          <span className="text-red-500">
                             {t.heroTitlePart3}
                           </span>{" "}
-                          <span className="text-red-500">
+                          <span className="text-gray-900">
                             {t.heroTitlePart4}
                           </span>{" "}
-                          <span className="text-gray-900">
+                          <span className="text-red-500">
                             {t.heroTitlePart5}
+                          </span>{" "}
+                          <span className="text-gray-900">
+                            {t.heroTitlePart6}
+                          </span>{" "}
+                          <span className="text-gray-900">
+                            {t.heroTitlePart7}
                           </span>
                         </>
                       ) : (
@@ -1110,202 +1137,8 @@ export default function Component() {
             </div>
           </section>
 
-          {/* Social Media Section */}
-          <section className="py-16 bg-white border-y">
-            <div className="container px-4 mx-auto">
-              <div className="max-w-3xl mx-auto text-center mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  {t.followUsSocialMedia}
-                </h2>
-                <p className="text-lg text-gray-600">{t.joinCommunity}</p>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <Link
-                  href="https://www.youtube.com/@misionvallado6894"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Youtube className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    YouTube
-                  </h3>
-                  <p className="text-sm text-gray-600 text-center">
-                    {t.youtubeDescription}
-                  </p>
-                </Link>
-
-                <Link
-                  href="https://www.instagram.com/misionvallado"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Instagram className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    Instagram
-                  </h3>
-                  <p className="text-sm text-gray-600 text-center">
-                    {t.instagramDescription}
-                  </p>
-                </Link>
-
-                <Link
-                  href="https://www.facebook.com/profile.php?id=100068028247976"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Facebook className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    Facebook
-                  </h3>
-                  <p className="text-sm text-gray-600 text-center">
-                    {t.facebookDescription}
-                  </p>
-                </Link>
-
-                <Link
-                  href="https://www.tiktok.com/@misionvallado"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Video className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    TikTok
-                  </h3>
-                  <p className="text-sm text-gray-600 text-center">
-                    {t.tiktokDescription}
-                  </p>
-                </Link>
-              </div>
-            </div>
-          </section>
-
-          {/* Pillars Section */}
-          <section id="pilares" className="py-20 bg-white">
-            <div className="container px-4 mx-auto">
-              <div className="max-w-4xl mx-auto text-center mb-20">
-                <Badge
-                  variant="outline"
-                  className="mb-6 border-red-200 text-red-600 px-4 py-2"
-                >
-                  <Heart className="w-4 h-4 mr-2" />
-                  {t.fundamentalPillars}
-                </Badge>
-                <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
-                  {t.missionVisionValues}
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                  {t.pillarsDescription}
-                </p>
-              </div>
-
-              {/* Mission and Vision - Side by Side */}
-              <div className="grid lg:grid-cols-2 gap-12 mb-20">
-                {/* Mission */}
-                <div className="space-y-6">
-                  <div className="flex items-center mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                      <Shield className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        {t.mission}
-                      </h3>
-                      <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
-                    </div>
-                  </div>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {t.missionDescription}
-                  </p>
-                  <div className="w-full h-58 rounded-2xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/MISION_1.jpeg"
-                      alt={t.missionImageAlt}
-                      width={400}
-                      height={200}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* Vision */}
-                <div className="space-y-6">
-                  <div className="flex items-center mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                      <TrendingUp className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        {t.vision}
-                      </h3>
-                      <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
-                    </div>
-                  </div>
-                  <p className="text-lg text-gray-700 leading-relaxed md:mb-13">
-                    {t.visionDescription}
-                  </p>
-                  <div className="w-full h-58 rounded-2xl overflow-hidden shadow-lg">
-                    <Image
-                      src="/MISION_2.jpeg"
-                      alt={t.visionImageAlt}
-                      width={400}
-                      height={200}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Values Section */}
-              <div className="space-y-8">
-                <div className="flex items-center mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
-                    <Award className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      {t.ourValues}
-                    </h3>
-                    <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
-                  </div>
-                </div>
-                <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
-                  {t.valuesDescription}
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                  {[
-                    t.passion,
-                    t.transparency,
-                    t.respect,
-                    t.compassion,
-                    t.commitment,
-                    t.solidarity,
-                  ].map((valor, idx) => (
-                    <div
-                      key={idx}
-                      className="border border-red-500 text-red-500 font-semibold px-4 py-3 rounded-xl text-center hover:from-red-100 hover:to-red-200 hover:border-red-300 transition-all duration-300"
-                    >
-                      {valor}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* Why We Do It Section */}
-          <section id="why-we-do-it" className="py-20 bg-gray-50">
+          <section id="why-we-do-it" className="py-20 bg-white">
             <div className="container px-4 mx-auto">
               <div className="max-w-4xl mx-auto text-center mb-16">
                 <Badge
@@ -1324,94 +1157,120 @@ export default function Component() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 {/* Estadística 1 */}
-                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                <Card className="border-0 shadow-lg bg-red-500 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                       <Shield className="h-8 w-8 text-red-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg font-bold text-white mb-3">
                       {t.painConfusion}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-sm opacity-90">
                       {t.painConfusionDesc}
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Estadística 2 */}
-                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                <Card className="border-0 shadow-lg bg-red-500 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                       <Users className="h-8 w-8 text-red-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg font-bold text-white mb-3">
                       {t.closePerpetrators}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-sm opacity-90">
                       {t.closePerpetratorsDesc}
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Estadística 3 */}
-                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                <Card className="border-0 shadow-lg bg-red-500 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                       <TrendingUp className="h-8 w-8 text-red-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg font-bold text-white mb-3">
                       {t.oneInFourGirls}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-sm opacity-90">
                       {t.oneInFourGirlsDesc}
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Estadística 4 */}
-                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                <Card className="border-0 shadow-lg bg-red-500 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                       <MessageCircle className="h-8 w-8 text-red-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg font-bold text-white mb-3">
                       {t.onlyOneInTen}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-sm opacity-90">
                       {t.onlyOneInTenDesc}
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Estadística 5 */}
-                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                <Card className="border-0 shadow-lg bg-red-500 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                       <Heart className="h-8 w-8 text-red-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg font-bold text-white mb-3">
                       {t.lifelongConsequences}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-sm opacity-90">
                       {t.lifelongConsequencesDesc}
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Estadística 6 */}
-                <Card className="border-0 shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+                <Card className="border-0 shadow-lg bg-red-500 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
                       <Award className="h-8 w-8 text-red-500" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg font-bold text-white mb-3">
                       {t.yourHelpMakesDifference}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm">
+                    <p className="text-white leading-relaxed text-sm opacity-90">
                       {t.yourHelpMakesDifferenceDesc}
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+
+              {/* Vision */}
+              <div className="space-y-6">
+                <div className="max-w-4xl mx-auto text-center mb-16">
+                  <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                    {t.visionTitle}
+                  </h2>
+                </div>
+
+                <div className="space-y-8">
+                  <div className="max-w-xl mx-auto text-center mb-16">
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      {t.visionDescription}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                      src="/MISION_2.jpeg"
+                      alt={t.visionImageAlt}
+                      width={500}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1442,7 +1301,7 @@ export default function Component() {
           {/* Programs Section */}
           <section
             id="programas"
-            className="py-20 bg-white border-t border-gray-200"
+            className="py-20 bg-gray-50 border-t border-gray-200"
           >
             <div className="container px-4 mx-auto">
               <div className="max-w-3xl mx-auto text-center mb-16">
@@ -1545,7 +1404,10 @@ export default function Component() {
                       >
                         <Image
                           src={src}
-                          alt={`Programa ${index + 1} - Misión Vallado`}
+                          alt={t.programImageAlt.replace(
+                            "{number}",
+                            (index + 1).toString()
+                          )}
                           fill
                           className="object-cover"
                           priority={index === 0}
@@ -1576,7 +1438,7 @@ export default function Component() {
                 <p className="text-xl text-gray-600">{t.impactDescription}</p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
                 <Card className="border-0 shadow-lg bg-white">
                   <CardContent className="p-8 text-center">
                     <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1604,56 +1466,6 @@ export default function Component() {
                     </div>
                   </CardContent>
                 </Card>
-
-                <Card className="border-0 shadow-lg bg-white md:col-span-2 lg:col-span-1">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Award className="h-8 w-8 text-red-500" />
-                    </div>
-                    <div className="text-3xl font-bold text-red-500 mb-2">
-                      {formatNumber(animatedNumbers.recoveryRate)}%
-                    </div>
-                    <div className="text-gray-600 font-medium">
-                      {t.recoveryRate}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
-
-          {/* Videos Section */}
-          <section id="videos" className="py-20 bg-white border-y">
-            <div className="container px-4 mx-auto">
-              <div className="max-w-3xl mx-auto text-center mb-16">
-                <Badge
-                  variant="outline"
-                  className="mb-4 border-red-200 text-red-600"
-                >
-                  <Youtube className="w-3 h-3 mr-1" />
-                  {t.videos}
-                </Badge>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  {t.videosTitle}
-                </h2>
-                <p className="text-xl text-gray-600">{t.videosDescription}</p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8">
-                {youtubeVideos.map((video) => (
-                  <div
-                    key={video.id}
-                    className="relative aspect-video rounded-xl overflow-hidden shadow-lg"
-                  >
-                    <iframe
-                      src={`https://www.youtube.com/embed/${video.id}`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                    />
-                  </div>
-                ))}
               </div>
             </div>
           </section>
@@ -1681,7 +1493,7 @@ export default function Component() {
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-gray-900">
-                      Características:
+                      {t.bookFeaturesTitle}
                     </h3>
                     <ul className="space-y-2">
                       {t.bookFeatures.map((feature, index) => (
@@ -1716,8 +1528,44 @@ export default function Component() {
             </div>
           </section>
 
+          {/* Videos Section */}
+          <section id="videos" className="py-20 bg-gray-50 border-y">
+            <div className="container px-4 mx-auto">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <Badge
+                  variant="outline"
+                  className="mb-4 border-red-200 text-red-600"
+                >
+                  <Youtube className="w-3 h-3 mr-1" />
+                  {t.videos}
+                </Badge>
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                  {t.videosTitle}
+                </h2>
+                <p className="text-xl text-gray-600">{t.videosDescription}</p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {youtubeVideos.map((video) => (
+                  <div
+                    key={video.id}
+                    className="relative aspect-video rounded-xl overflow-hidden shadow-lg"
+                  >
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Support Section */}
-          <section className="py-20 bg-gray-50">
+          <section className="py-20 bg-white">
             <div className="container px-4 mx-auto">
               <div className="max-w-3xl mx-auto text-center mb-10">
                 <Badge
@@ -1793,8 +1641,89 @@ export default function Component() {
             </div>
           </section>
 
+          {/* Social Media Section */}
+          <section className="py-16 bg-white border-y">
+            <div className="container px-4 mx-auto">
+              <div className="max-w-3xl mx-auto text-center mb-16">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  {t.followUsSocialMedia}
+                </h2>
+                <p className="text-lg text-gray-600">{t.joinCommunity}</p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <Link
+                  href="https://www.youtube.com/@misionvallado6894"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Youtube className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {t.youtubeName}
+                  </h3>
+                  <p className="text-sm text-gray-600 text-center">
+                    {t.youtubeDescription}
+                  </p>
+                </Link>
+
+                <Link
+                  href="https://www.instagram.com/misionvallado"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Instagram className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {t.instagramName}
+                  </h3>
+                  <p className="text-sm text-gray-600 text-center">
+                    {t.instagramDescription}
+                  </p>
+                </Link>
+
+                <Link
+                  href="https://www.facebook.com/profile.php?id=100068028247976"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Facebook className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {t.facebookName}
+                  </h3>
+                  <p className="text-sm text-gray-600 text-center">
+                    {t.facebookDescription}
+                  </p>
+                </Link>
+
+                <Link
+                  href="https://www.tiktok.com/@misionvallado"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center p-6 rounded-xl bg-white border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Video className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {t.tiktokName}
+                  </h3>
+                  <p className="text-sm text-gray-600 text-center">
+                    {t.tiktokDescription}
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Testimonials Section */}
-          <section className="py-20 bg-white">
+          <section className="py-20 bg-gray-50">
             <div className="container px-4 mx-auto">
               <div className="max-w-3xl mx-auto text-center mb-16">
                 <Badge
@@ -1887,7 +1816,7 @@ export default function Component() {
                     priority
                   />
                   <div>
-                    <div className="text-xl font-bold">Misión Vallado</div>
+                    <div className="text-xl font-bold">{t.organizationName}</div>
                     <div className="text-sm text-gray-400">
                       {t.protectingGeneration}
                     </div>
@@ -1983,7 +1912,7 @@ export default function Component() {
 
             <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} Misión Vallado.{" "}
+                © {new Date().getFullYear()} {t.organizationName}.{" "}
                 {t.allRightsReserved}
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
