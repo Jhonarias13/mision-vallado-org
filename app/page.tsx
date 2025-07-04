@@ -212,7 +212,7 @@ const translations = {
       "Con tu apoyo podemos seguir protegiendo a más niños y niñas del abuso sexual. Cada contribución, sin importar el monto, se convierte en protección real y esperanza renovada.",
     otherAmount: "Otro Monto",
     secureDonation: "Donación 100% segura",
-    taxDeductible: "Deducible de impuestos",
+    taxDeductible: "Deducible de impuestos (Aplica en Colombia)",
     totalTransparency: "Transparencia total",
 
     // Testimonials
@@ -458,7 +458,7 @@ const translations = {
       "With your support we can continue protecting more children and girls from sexual abuse. Every contribution, regardless of the amount, becomes real protection and renewed hope.",
     otherAmount: "Other Amount",
     secureDonation: "100% secure donation",
-    taxDeductible: "Tax deductible",
+    taxDeductible: "Tax deductible (Applies in Colombia)",
     totalTransparency: "Total transparency",
 
     // Testimonials
