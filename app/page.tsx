@@ -57,7 +57,7 @@ const translations = {
       "Educando y movilizando a padres, cuidadores, comunidades y actores sociales, promoviendo la prevención, detección temprana y atención integral para su desarrollo seguro.",
     makeDonation: "Hacer una Donación",
     learnMore: "Conocer Nuestro Trabajo",
-    childrenProtected: "+2.109 niños protegidos",
+    childrenProtected: "+2.172 niños protegidos",
     rating: "Calificación 5.0",
 
     // Stats
@@ -130,7 +130,7 @@ const translations = {
     impactTitle: "Transformando vidas, construyendo futuros seguros",
     impactDescription:
       "Cada donación se convierte en protección real para un niño o niña vulnerable.",
-    protectedFromAbuse: "Niños y niñas protegidos del abuso sexual",
+    protectedFromAbuse: "Niñas y niños empoderados en prevención del abuso",
     trainedAdults: "Adultos capacitados como protectores",
     recoveryRate: "Tasa de recuperación exitosa",
 
@@ -306,7 +306,7 @@ const translations = {
       "We are a Non-Profit Organization, based on Christian principles, that promotes a culture of care and protection for children, to safeguard them from sexual abuse. We work by teaching parents how to minimize risks and empowering minors to identify these threats and report them in time.",
     makeDonation: "Make a Donation",
     learnMore: "Learn About Our Work",
-    childrenProtected: "+2,109 children protected",
+    childrenProtected: "+2,172 children protected",
     rating: "5.0 Rating",
 
     // Stats
@@ -379,7 +379,7 @@ const translations = {
     impactTitle: "Transforming lives, building safe futures",
     impactDescription:
       "Every donation becomes real protection for a vulnerable child.",
-    protectedFromAbuse: "Children protected from sexual abuse",
+    protectedFromAbuse: "Girls and boys empowered in abuse prevention",
     trainedAdults: "Adults trained as protectors",
     recoveryRate: "Successful recovery rate",
 
@@ -540,6 +540,7 @@ export default function Component() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentImagenIndex2, setCurrentImagenIndex2] = useState(0);
+  const [currentBookImageIndex, setCurrentBookImageIndex] = useState(0);
   const [isHoveringProgram, setIsHoveringProgram] = useState(false);
   const [animatedNumbers, setAnimatedNumbers] = useState({
     protectedChildren: 0,
@@ -563,6 +564,13 @@ export default function Component() {
     "/imagen6.jpeg", // Hero principal - Niños felices
     "/imagen7.jpeg", // Hero principal - Niños felices
     "/imagen8.jpeg", // Hero principal - Niños felices
+  ];
+
+  const bookImages = [
+    "/book.jpeg", // Imagen principal del libro
+    "/book2.png", // Imagen alternativa del libro
+    "/imagen16.jpeg", // Niños con el libro
+    "/imagen17.jpeg", // Niños con el libro
   ];
 
   useEffect(() => {
@@ -602,15 +610,30 @@ export default function Component() {
     };
   }, [programImages.length, isHoveringProgram]);
 
+  useEffect(() => {
+    let interval3: NodeJS.Timeout;
+    interval3 = setInterval(() => {
+      setCurrentBookImageIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % bookImages.length;
+        return nextIndex;
+      });
+    }, 3000);
+    return () => {
+      if (interval3) {
+        clearInterval(interval3);
+      }
+    };
+  }, [bookImages.length]);
+
   // Animate numbers when impact section is visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Animate protected children (2,109)
+            // Animate protected children (2,172)
             let current = 0;
-            const target = 2109;
+            const target = 2172;
             const increment = target / 50;
             const timer = setInterval(() => {
               current += increment;
@@ -624,9 +647,9 @@ export default function Component() {
               }));
             }, 30);
 
-            // Animate trained adults (5,134)
+            // Animate trained adults (5,361)
             let currentAdults = 0;
-            const targetAdults = 5134;
+            const targetAdults = 5361;
             const incrementAdults = targetAdults / 50;
             const timerAdults = setInterval(() => {
               currentAdults += incrementAdults;
@@ -728,7 +751,7 @@ export default function Component() {
       description: t.video2Description,
     },
     {
-      id: "TyVqCY1nE_0",
+      id: "1Rd1U-VngL8",
       title: t.video3Title,
       description: t.video3Description,
     },
@@ -752,9 +775,7 @@ export default function Component() {
                 : "Give a story that saves lives!"}
             </h2>
             <p className="text-base lg:text-lg font-semibold text-red-600 mb-2">
-              {language === "es"
-                ? '"El regalo del Rey"'
-                : '"The King\'s Gift"'}
+              {language === "es" ? '"El regalo del Rey"' : '"The King\'s Gift"'}
             </p>
             <p className="text-sm lg:text-base text-gray-700 mb-3 lg:mb-4 leading-relaxed">
               {language === "es"
@@ -767,10 +788,17 @@ export default function Component() {
                 : "Donate a book to a child in need"}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
-              <Button className="bg-red-500 hover:bg-red-600 text-white font-bold text-sm lg:text-base py-2 lg:py-3" onClick={handleDonateBook}>
+              <Button
+                className="bg-red-500 hover:bg-red-600 text-white font-bold text-sm lg:text-base py-2 lg:py-3"
+                onClick={handleDonateBook}
+              >
                 {language === "es" ? "Donar" : "Donate"}
               </Button>
-              <Button variant="outline" className="font-bold text-sm lg:text-base py-2 lg:py-3" onClick={handleBuyBook}>
+              <Button
+                variant="outline"
+                className="font-bold text-sm lg:text-base py-2 lg:py-3"
+                onClick={handleBuyBook}
+              >
                 {language === "es" ? "Comprar" : "Buy"}
               </Button>
             </div>
@@ -991,7 +1019,9 @@ export default function Component() {
                       <Shield className="w-3 h-3 mr-1" />
                       {t.childProtection}
                     </Badge>
-                    <span className="text-gray-900 font-bold text-2xl sm:text-3xl md:text-4xl block mb-4">{t.heroTitlePart1}</span>
+                    <span className="text-gray-900 font-bold text-2xl sm:text-3xl md:text-4xl block mb-4">
+                      {t.heroTitlePart1}
+                    </span>
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                       {language === "es" ? (
                         <>
@@ -1506,13 +1536,27 @@ export default function Component() {
                 </div>
 
                 <div className="relative">
-                  <Image
-                    src="/book.jpeg"
-                    width="600"
-                    height="800"
-                    alt={t.bookImageAlt}
-                    className="rounded-2xl shadow-xl"
-                  />
+                  <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-xl">
+                    {bookImages.map((src, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-500 ${
+                          index === currentBookImageIndex
+                            ? "opacity-100"
+                            : "opacity-0"
+                        }`}
+                      >
+                        <Image
+                          src={src}
+                          alt={t.bookImageAlt}
+                          fill
+                          className="object-cover"
+                          priority={index === 0}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -1607,14 +1651,27 @@ export default function Component() {
                 </p>
 
                 <div className="flex justify-center mb-8">
-                  <Button
-                    size="lg"
-                    className="bg-white text-red-600 hover:bg-gray-100 shadow-lg px-8"
-                    onClick={handleDonationClick}
-                  >
-                    <Heart className="mr-2 h-5 w-5" />
-                    {t.makeDonation}
-                  </Button>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-2xl">
+                    <h3 className="text-2xl font-bold text-white mb-6">
+                      Información de Donación
+                    </h3>
+                    <div className="space-y-4 text-left">
+                      <div className="bg-white/20 rounded-xl p-4">
+                        <h4 className="font-semibold text-white mb-2">
+                          CUENTA DE AHORROS BANCOLOMBIA
+                        </h4>
+                        <p className="text-white/90 text-lg font-mono">
+                          Mision Vallado # 322-000057-77
+                        </p>
+                      </div>
+                      <div className="bg-white/20 rounded-xl p-4">
+                        <h4 className="font-semibold text-white mb-2">NEQUI</h4>
+                        <p className="text-white/90 text-lg font-mono">
+                          3214019379
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white/80 text-sm">
@@ -1806,7 +1863,9 @@ export default function Component() {
                     priority
                   />
                   <div>
-                    <div className="text-xl font-bold">{t.organizationName}</div>
+                    <div className="text-xl font-bold">
+                      {t.organizationName}
+                    </div>
                     <div className="text-sm text-gray-400">
                       {t.protectingGeneration}
                     </div>
