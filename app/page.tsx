@@ -611,17 +611,14 @@ export default function Component() {
   }, [programImages.length, isHoveringProgram]);
 
   useEffect(() => {
-    let interval3: NodeJS.Timeout;
-    interval3 = setInterval(() => {
+    const interval3: NodeJS.Timeout = setInterval(() => {
       setCurrentBookImageIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % bookImages.length;
         return nextIndex;
       });
     }, 3000);
     return () => {
-      if (interval3) {
-        clearInterval(interval3);
-      }
+      clearInterval(interval3);
     };
   }, [bookImages.length]);
 
