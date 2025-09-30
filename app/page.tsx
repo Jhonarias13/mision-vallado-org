@@ -548,6 +548,7 @@ export default function Component() {
     recoveryRate: 0,
   });
   const [showWelcomeModal, setShowWelcomeModal] = useState(true);
+  const [copiedText, setCopiedText] = useState("");
 
   const programImages = [
     "/imagen9.jpeg", // Formación Vallado - Imagen de programa general
@@ -561,16 +562,21 @@ export default function Component() {
   ];
 
   const heroImages = [
+    "/imagenPrincipal.jpeg", // Hero principal - Niños felices,
+    "/imagenPrincipal2.jpeg", // Hero principal - Niños felices,
     "/imagen6.jpeg", // Hero principal - Niños felices
     "/imagen7.jpeg", // Hero principal - Niños felices
     "/imagen8.jpeg", // Hero principal - Niños felices
   ];
 
   const bookImages = [
-    "/book.jpeg", // Imagen principal del libro
-    "/book2.png", // Imagen alternativa del libro
+    "/book_1.jpeg",
+    "/book_2.jpeg",
+    "/book_3.jpeg",
+    "/book_4.jpeg",
+    "/book_5.jpeg",
     "/imagen16.jpeg", // Niños con el libro
-    "/imagen17.jpeg", // Niños con el libro
+    "/book2.png", // Imagen alternativa del libro
   ];
 
   useEffect(() => {
@@ -734,6 +740,16 @@ export default function Component() {
         : "Hi, I want to buy the book 'The King's Gift'. Can you give me more information?"
     );
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+  };
+
+  const copyToClipboard = async (text: string, label: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedText(label);
+      setTimeout(() => setCopiedText(""), 2000);
+    } catch (err) {
+      console.error('Error al copiar al portapapeles:', err);
+    }
   };
 
   const youtubeVideos = [
@@ -1653,18 +1669,30 @@ export default function Component() {
                       Información de Donación
                     </h3>
                     <div className="space-y-4 text-left">
-                      <div className="bg-white/20 rounded-xl p-4">
+                      <div 
+                        className="bg-white/20 rounded-xl p-4 cursor-pointer hover:bg-white/30 transition-all duration-300 border-2 border-transparent hover:border-white/40"
+                        onClick={() => copyToClipboard("32200005777", "Número de cuenta Bancolombia copiado")}
+                      >
                         <h4 className="font-semibold text-white mb-2">
                           CUENTA DE AHORROS BANCOLOMBIA
                         </h4>
                         <p className="text-white/90 text-lg font-mono">
                           Mision Vallado # 322-000057-77
                         </p>
+                        <p className="text-white/70 text-sm mt-2">
+                          👆 Haz clic para copiar el número
+                        </p>
                       </div>
-                      <div className="bg-white/20 rounded-xl p-4">
+                      <div 
+                        className="bg-white/20 rounded-xl p-4 cursor-pointer hover:bg-white/30 transition-all duration-300 border-2 border-transparent hover:border-white/40"
+                        onClick={() => copyToClipboard("3214019379", "Número de Nequi copiado")}
+                      >
                         <h4 className="font-semibold text-white mb-2">NEQUI</h4>
                         <p className="text-white/90 text-lg font-mono">
                           3214019379
+                        </p>
+                        <p className="text-white/70 text-sm mt-2">
+                          👆 Haz clic para copiar el número
                         </p>
                       </div>
                     </div>
@@ -1978,6 +2006,14 @@ export default function Component() {
             </div>
           </div>
         </footer>
+
+        {/* Notificación de copia */}
+        {copiedText && (
+          <div className="fixed top-4 right-4 z-50 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2 animate-in slide-in-from-right duration-300">
+            <CheckCircle className="w-5 h-5" />
+            <span className="font-medium">{copiedText}</span>
+          </div>
+        )}
       </div>
     </>
   );
