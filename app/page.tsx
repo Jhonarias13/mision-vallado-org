@@ -57,7 +57,7 @@ const translations = {
       "Educando y movilizando a padres, cuidadores, comunidades y actores sociales, promoviendo la prevención, detección temprana y atención integral para su desarrollo seguro.",
     makeDonation: "Hacer una Donación",
     learnMore: "Conocer Nuestro Trabajo",
-    childrenProtected: "+2.172 niños protegidos",
+    childrenProtected: "+2.269 niños protegidos",
     rating: "Calificación 5.0",
 
     // Stats
@@ -198,12 +198,8 @@ const translations = {
     supportDescription:
       "Con tu ayuda podemos hacer la diferencia en la vida de los niños y las niñas, ellos aprenderán a no callar lo que les daña y sus padres y la comunidad estarán más atentos a protegerlos.",
     supportWays: [
-      "Visitando nuestras redes sociales y compartiendo nuestras publicaciones",
-      "Haciendo una donación para nuestros proyectos y estrategias",
-      "Si haces parte de una empresa u organización puedes unirte al Escuadrón Vallado",
-      "Donando un libro EL REGALO DEL REY para un niño de bajos recursos",
-      "Contratando nuestros servicios: Charlas, Talleres y Conferencias",
-      "Ofreciéndote como voluntario",
+      "Puedes contratar nuestros servicios: Charlas, Talleres y Conferencias para instituciones educativas o Iglesias",
+      "¿Lideras una empresa, organización o iglesia? Únete al Escuadrón Vallado y conviértete en un aliado de la protección infantil. Patrocina jornadas, realiza aportes o invítanos a realizar actividades de prevención en tu organización. Juntos podemos proteger a más niños.",
     ],
 
     // Donation CTA
@@ -237,7 +233,7 @@ const translations = {
     termsOfUse: "Términos de Uso",
     allRightsReserved: "Todos los derechos reservados.",
     phone: "+57 321 401 9379",
-    email: "glenys.otero@misionvallado.org",
+    email: "Fundacionmisionvallado@gmail.com",
     location: "Santander, Colombia",
 
     // Donation Modal
@@ -306,7 +302,7 @@ const translations = {
       "We are a Non-Profit Organization, based on Christian principles, that promotes a culture of care and protection for children, to safeguard them from sexual abuse. We work by teaching parents how to minimize risks and empowering minors to identify these threats and report them in time.",
     makeDonation: "Make a Donation",
     learnMore: "Learn About Our Work",
-    childrenProtected: "+2,172 children protected",
+    childrenProtected: "+2,269 children protected",
     rating: "5.0 Rating",
 
     // Stats
@@ -444,12 +440,8 @@ const translations = {
     supportDescription:
       "With your help, we can make a difference in the lives of children. They will learn not to remain silent about what harms them, and their parents and community will be more attentive to protecting them.",
     supportWays: [
-      "Visiting our social networks and sharing our posts",
-      "Making a donation for our projects and strategies",
-      "If you are part of a company or organization, you can join the Vallado Squadron",
-      "Donating a book THE KING'S GIFT for a child in need",
-      "Hiring our services: Talks, Workshops and Conferences",
-      "Offering yourself as a volunteer",
+      "You can hire our services: Talks, Workshops and Conferences for educational institutions or Churches",
+      "Do you lead a company, organization or church? Join the Vallado Squadron and become an ally of child protection. Sponsor events, make contributions or invite us to hold prevention activities in your organization. Together we can protect more children.",
     ],
 
     // Donation CTA
@@ -483,7 +475,7 @@ const translations = {
     termsOfUse: "Terms of Use",
     allRightsReserved: "All rights reserved.",
     phone: "+57 321 401 9379",
-    email: "glenys.otero@misionvallado.org",
+    email: "Fundacionmisionvallado@gmail.com",
     location: "Santander, Colombia",
 
     // Donation Modal
@@ -636,7 +628,7 @@ export default function Component() {
           if (entry.isIntersecting) {
             // Animate protected children (2,172)
             let current = 0;
-            const target = 2172;
+            const target = 2269;
             const increment = target / 50;
             const timer = setInterval(() => {
               current += increment;
@@ -652,7 +644,7 @@ export default function Component() {
 
             // Animate trained adults (5,361)
             let currentAdults = 0;
-            const targetAdults = 5361;
+            const targetAdults = 5411;
             const incrementAdults = targetAdults / 50;
             const timerAdults = setInterval(() => {
               currentAdults += incrementAdults;
@@ -759,7 +751,7 @@ export default function Component() {
       description: t.video1Description,
     },
     {
-      id: "TrgW7OtxJBs",
+      id: "haMoUH3b50g",
       title: t.video2Title,
       description: t.video2Description,
     },
@@ -1097,32 +1089,6 @@ export default function Component() {
                       {t.learnMore}
                     </Button>
                   </div>
-                  <div className="flex flex-col items-center space-y-2 sm:flex-row sm:space-x-8 sm:space-y-0">
-                    <div className="flex items-center space-x-2">
-                      <div className="flex -space-x-2">
-                        {[1, 2, 3, 4, 5].map((i) => (
-                          <div
-                            key={i}
-                            className="w-8 h-8 rounded-full bg-gradient-to-r from-red-400 to-red-600 border-2 border-white"
-                          />
-                        ))}
-                      </div>
-                      <span className="text-sm text-gray-600">
-                        {t.childrenProtected}
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Star
-                          key={i}
-                          className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                      <span className="text-sm text-gray-600 ml-2">
-                        {t.rating}
-                      </span>
-                    </div>
-                  </div>
                 </div>
                 <div className="relative">
                   <div className="relative z-10 overflow-hidden rounded-2xl">
@@ -1455,9 +1421,9 @@ export default function Component() {
           </section>
 
           {/* Impact Section */}
-          <section id="impacto" className="py-20 bg-gray-50">
+          <section id="impacto" className="py-16 bg-gray-50 border-t border-gray-100">
             <div className="container px-4 mx-auto">
-              <div className="max-w-3xl mx-auto text-center mb-16">
+              <div className="max-w-3xl mx-auto text-center mb-12">
                 <Badge
                   variant="outline"
                   className="mb-4 border-red-200 text-red-600"
@@ -1465,40 +1431,231 @@ export default function Component() {
                   <TrendingUp className="w-3 h-3 mr-1" />
                   {t.impact}
                 </Badge>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">
                   {t.impactTitle}
                 </h2>
                 <p className="text-xl text-gray-600">{t.impactDescription}</p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
-                <Card className="border-0 shadow-lg bg-white">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Shield className="h-8 w-8 text-red-500" />
-                    </div>
-                    <div className="text-3xl font-bold text-red-500 mb-2">
-                      {formatNumber(animatedNumbers.protectedChildren)}+
-                    </div>
-                    <div className="text-gray-600 font-medium">
-                      {t.protectedFromAbuse}
-                    </div>
-                  </CardContent>
-                </Card>
+              <div className="grid md:grid-cols-2 gap-12 max-w-3xl mx-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-red-500 text-xs font-bold uppercase tracking-widest">
+                    {t.protectedFromAbuse}
+                  </span>
+                  <div className="text-[4.5rem] font-black text-gray-900 leading-none tabular-nums">
+                    {formatNumber(animatedNumbers.protectedChildren)}
+                    <span className="text-red-500 text-5xl">+</span>
+                  </div>
+                </div>
 
-                <Card className="border-0 shadow-lg bg-white">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="h-8 w-8 text-red-500" />
+                <div className="flex flex-col gap-3">
+                  <span className="text-red-500 text-xs font-bold uppercase tracking-widest">
+                    {t.trainedAdults}
+                  </span>
+                  <div className="text-[4.5rem] font-black text-gray-900 leading-none tabular-nums">
+                    {formatNumber(animatedNumbers.trainedAdults)}
+                    <span className="text-red-500 text-5xl">+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Management Reports Strip */}
+          <div className="bg-gray-900">
+            <div className="container px-4 mx-auto py-10">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                <div>
+                  <p className="text-red-400 text-xs font-bold uppercase tracking-widest mb-1">
+                    {language === "es" ? "Transparencia" : "Transparency"}
+                  </p>
+                  <h3 className="text-white text-2xl font-bold">
+                    {language === "es" ? "Informes de Gestión" : "Management Reports"}
+                  </h3>
+                </div>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                  <div className="border-l border-gray-600 pl-5">
+                    <span className="text-white font-bold block text-base">
+                      {language === "es" ? "Informe Anual 2025" : "Annual Report 2025"}
+                    </span>
+                    <span className="text-gray-400 text-sm block">
+                      {language === "es"
+                        ? "Resultados y logros del año"
+                        : "Year results and achievements"}
+                    </span>
+                  </div>
+                  <a
+                    href="/informe-gestion-2025.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-400 text-white font-semibold px-5 py-3 rounded-lg transition-colors duration-200 text-sm whitespace-nowrap"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                    {language === "es" ? "Descargar informe" : "Download report"}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Support Section */}
+          <section className="py-20 bg-gray-50 border-t border-gray-100">
+            <div className="container px-4 mx-auto">
+              {/* Header */}
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <Badge
+                  variant="outline"
+                  className="mb-4 border-red-200 text-red-600"
+                >
+                  <Heart className="w-3 h-3 mr-1" />
+                  {t.supportTitle2}
+                </Badge>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                  {t.supportTitle}
+                </h2>
+                <p className="text-xl text-gray-600">{t.supportDescription}</p>
+              </div>
+
+              {/* Main block: editorial split */}
+              <div className="max-w-5xl mx-auto">
+                <div className="support-donation-block grid lg:grid-cols-2 rounded-2xl overflow-hidden shadow-xl mb-6">
+                  {/* Left — impact story */}
+                  <div className="bg-red-500 p-8 lg:p-10 flex flex-col justify-between gap-6">
+                    <div>
+                      <span className="block text-center bg-white/20 text-white text-sm font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-6">
+                        {language === "es" ? "Dona ahora" : "Donate now"}
+                      </span>
+                      <p className="text-white/90 text-base leading-relaxed mb-6">
+                        {language === "es" ? "Con solo " : "With just "}
+                        <span className="text-white font-black" style={{ fontSize: "1.25em" }}>
+                          $50.000 COP
+                        </span>
+                        {language === "es"
+                          ? " (aprox 13 USD) puedes cambiar la historia de un niño o niña."
+                          : " (approx. 13 USD) you can change the story of a child."}
+                      </p>
+                      <p className="text-white/90 text-base leading-relaxed">
+                        {language === "es"
+                          ? "Tu aporte patrocina su participación en un "
+                          : "Your contribution sponsors their participation in a "}
+                        <strong className="text-white">
+                          {language === "es"
+                            ? "Vallado Party (Taller lúdico de prevención)"
+                            : "Vallado Party (Playful Prevention Workshop)"}
+                        </strong>
+                        {language === "es"
+                          ? " donde aprenderá a protegerse, recibirá el libro "
+                          : " where they will learn to protect themselves, receive the book "}
+                        <strong className="text-white">
+                          {language === "es" ? "EL REGALO DEL REY" : "THE KING'S GIFT"}
+                        </strong>
+                        {language === "es"
+                          ? " y un refrigerio. Además, sus padres reciben capacitación práctica para reconocer riesgos y blindarlo contra el abuso sexual de manera más efectiva."
+                          : " and a snack. Additionally, their parents receive practical training to recognize risks and shield them from sexual abuse more effectively."}
+                      </p>
                     </div>
-                    <div className="text-3xl font-bold text-red-500 mb-2">
-                      {formatNumber(animatedNumbers.trainedAdults)}+
-                    </div>
-                    <div className="text-gray-600 font-medium">
-                      {t.trainedAdults}
-                    </div>
-                  </CardContent>
-                </Card>
+                    <p className="text-white font-bold text-base italic border-t border-white/20 pt-5">
+                      {language === "es"
+                        ? "¡Una pequeña donación puede cambiar una vida para siempre!"
+                        : "A small donation can change a life forever!"}
+                    </p>
+                  </div>
+
+                  {/* Right — donation info */}
+                  <div className="bg-white p-8 lg:p-10 flex flex-col justify-center">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      {language === "es" ? "Información de donación" : "Donation info"}
+                    </h3>
+                    <p className="text-gray-400 text-sm mb-7">
+                      {language === "es"
+                        ? "Haz clic en la cuenta para copiar el número"
+                        : "Click the account to copy the number"}
+                    </p>
+
+                    {/* Bancolombia */}
+                    <button
+                      className="group relative text-left bg-gray-50 hover:bg-yellow-50 border border-gray-200 hover:border-yellow-400 transition-all duration-200 rounded-xl p-5 w-full cursor-pointer"
+                      onClick={() => copyToClipboard("32200005777", "bancolombia")}
+                    >
+                      {/* Logo + label */}
+                      <div className="flex items-center justify-between mb-4">
+                        <Image
+                          src="/Bancolombia-Logo-Vector.png"
+                          alt="Bancolombia"
+                          width={130}
+                          height={32}
+                          className="object-contain"
+                        />
+                        <span className="text-xs font-semibold transition-colors duration-200 text-gray-300 group-hover:text-yellow-600">
+                          {copiedText === "bancolombia"
+                            ? (language === "es" ? "¡Copiado!" : "Copied!")
+                            : (language === "es" ? "Copiar" : "Copy")}
+                        </span>
+                      </div>
+                      <span className="block text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">
+                        {language === "es" ? "Cuenta de Ahorros" : "Savings Account"}
+                      </span>
+                      <span className="block text-2xl font-black text-gray-900 font-mono tracking-wide">
+                        322-000057-77
+                      </span>
+                      <span className="block text-sm text-gray-500 mt-1 font-medium">
+                        Fundación Misión Vallado
+                      </span>
+                    </button>
+
+                    <p className="text-gray-400 text-sm mt-6 leading-relaxed">
+                      {language === "es"
+                        ? "Vincula tu cuenta y dona mensualmente para ayudarnos a proteger a muchos más niños durante todo el año."
+                        : "Link your account and donate monthly to help us protect many more children throughout the year."}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Unified contact banner */}
+                <div className="bg-white rounded-2xl border border-gray-200 p-8 flex flex-col md:flex-row items-center md:items-start gap-8">
+                  {/* Text */}
+                  <div className="flex-1 text-center md:text-left">
+                    <p className="text-xs text-red-500 font-bold uppercase tracking-widest mb-2">
+                      {language === "es" ? "Organizaciones · Empresas · Iglesias" : "Organizations · Companies · Churches"}
+                    </p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {language === "es"
+                        ? "¿Quieres colaborar con nosotros?"
+                        : "Want to collaborate with us?"}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {language === "es"
+                        ? "Contrata nuestras Charlas, Talleres y Conferencias, o únete al "
+                        : "Hire our Talks, Workshops and Conferences, or join the "}
+                      <strong className="text-gray-800">
+                        {language === "es" ? "Escuadrón Vallado" : "Vallado Squadron"}
+                      </strong>
+                      {language === "es"
+                        ? " y conviértete en aliado de la protección infantil. Juntos podemos proteger a más niños."
+                        : " and become an ally of child protection. Together we can protect more children."}
+                    </p>
+                  </div>
+
+                  {/* Contact actions */}
+                  <div className="flex flex-col gap-3 w-full md:w-auto md:flex-shrink-0">
+                    <a
+                      href="mailto:Fundacionmisionvallado@gmail.com"
+                      className="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-700 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors duration-200 whitespace-nowrap"
+                    >
+                      <Mail className="w-4 h-4" />
+                      Fundacionmisionvallado@gmail.com
+                    </a>
+                    <a
+                      href="https://wa.me/573214019379"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-5 py-3 rounded-xl transition-colors duration-200 whitespace-nowrap"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      WhatsApp 321 401 9379
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -1611,101 +1768,37 @@ export default function Component() {
             </div>
           </section>
 
-          {/* Support Section */}
-          <section className="py-20 bg-white">
-            <div className="container px-4 mx-auto">
-              <div className="max-w-3xl mx-auto text-center mb-10">
-                <Badge
-                  variant="outline"
-                  className="mb-4 border-red-200 text-red-600"
-                >
-                  <Heart className="w-3 h-3 mr-1" />
-                  {t.supportTitle2}
-                </Badge>
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                  {t.supportTitle}
-                </h2>
-                <p className="text-xl text-gray-600 mb-2">
-                  {t.supportDescription}
-                </p>
-              </div>
-
-              <div className="flex justify-center">
-                <ul
-                  className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-20 gap-y-8 mx-auto px-8"
-                  style={{ listStyle: "none" }}
-                >
-                  {t.supportWays.map((way, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start space-x-3 text-lg justify-start"
-                    >
-                      <span className="mt-1">
-                        <CheckCircle className="w-6 h-6 text-red-500 font-bold" />
-                      </span>
-                      <span className="font-semibold text-gray-800">{way}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </section>
-
           {/* Donation CTA Section */}
-          <section className="py-20 bg-gradient-to-r from-red-500 to-red-600 relative overflow-hidden">
-            <div className="absolute inset-0" />
+          <section id="donacion" className="py-24 bg-gradient-to-r from-red-500 to-red-600 relative overflow-hidden">
             <div className="container px-4 mx-auto relative z-10">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                   {t.donationTitle}
                 </h2>
-                <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                <p className="text-xl text-white/85 mb-10 leading-relaxed">
                   {t.donationDescription}
                 </p>
 
-                <div className="flex justify-center mb-8">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-2xl">
-                    <h3 className="text-2xl font-bold text-white mb-6">
-                      Información de Donación
-                    </h3>
-                    <div className="space-y-4 text-left">
-                      <div 
-                        className="bg-white/20 rounded-xl p-4 cursor-pointer hover:bg-white/30 transition-all duration-300 border-2 border-transparent hover:border-white/40"
-                        onClick={() => copyToClipboard("32200005777", "Número de cuenta Bancolombia copiado")}
-                      >
-                        <h4 className="font-semibold text-white mb-2">
-                          CUENTA DE AHORROS BANCOLOMBIA
-                        </h4>
-                        <p className="text-white/90 text-lg font-mono">
-                          Mision Vallado # 322-000057-77
-                        </p>
-                        <p className="text-white/70 text-sm mt-2">
-                          👆 Haz clic para copiar el número
-                        </p>
-                      </div>
-                      <div 
-                        className="bg-white/20 rounded-xl p-4 cursor-pointer hover:bg-white/30 transition-all duration-300 border-2 border-transparent hover:border-white/40"
-                        onClick={() => copyToClipboard("3214019379", "Número de Nequi copiado")}
-                      >
-                        <h4 className="font-semibold text-white mb-2">NEQUI</h4>
-                        <p className="text-white/90 text-lg font-mono">
-                          3214019379
-                        </p>
-                        <p className="text-white/70 text-sm mt-2">
-                          👆 Haz clic para copiar el número
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Button
+                  size="lg"
+                  className="bg-white text-red-600 hover:bg-gray-100 font-bold px-10 py-4 text-base shadow-lg mb-10"
+                  onClick={() => {
+                    const el = document.querySelector(".support-donation-block");
+                    el?.scrollIntoView({ behavior: "smooth", block: "center" });
+                  }}
+                >
+                  <Heart className="mr-2 h-5 w-5" />
+                  {language === "es" ? "Ver cómo donar" : "See how to donate"}
+                </Button>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white/80 text-sm">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4" />
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/75 text-sm">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 flex-shrink-0" />
                     <span>{t.secureDonation}</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4" />
+                  <div className="hidden sm:block w-px h-4 bg-white/30" />
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 flex-shrink-0" />
                     <span>{t.taxDeductible}</span>
                   </div>
                 </div>
@@ -1974,6 +2067,14 @@ export default function Component() {
                   >
                     {t.book}
                   </Link>
+                  <a
+                    href="/informe-gestion-2025.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-300 hover:text-white transition-colors"
+                  >
+                    {language === "es" ? "Transparencia" : "Transparency"}
+                  </a>
                   <Link
                     href="#contacto"
                     className="block text-gray-300 hover:text-white transition-colors"
